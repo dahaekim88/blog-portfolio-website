@@ -1,11 +1,10 @@
 import React from "react"
-import { Link } from "gatsby"
+
+import Layout from "../components/layout"
 import Header from "../components/header"
 
 export default () => (
-  <div style={{ width: "60%", color: "purple" }}>
+  <Layout>
     <Header headerText="Home" />
-    <Link to="/blog">Blog</Link>
-    <Link to="/projects">Projects</Link>
-  </div>
+  </Layout>
 )
