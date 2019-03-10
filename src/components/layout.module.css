@@ -1,0 +1,11 @@
+.container {
+  margin: 3rem auto;
+  width: 60%;
+}
+
+@media screen and (max-width: 767px) {
+  .container {
+    margin: 2rem 1rem;
+    width: 100%;
+  }
+}
