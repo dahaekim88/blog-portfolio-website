@@ -4,8 +4,8 @@ import Header from "../components/header"
 
 export default () => (
   <div style={{ width: "60%", color: "purple" }}>
-    <Header headerText="Home" />
-    <Link to="/blog">Blog</Link>
+    <Header headerText="Blog" />
+    <Link to="/">Home</Link>
     <Link to="/projects">Projects</Link>
   </div>
 )
