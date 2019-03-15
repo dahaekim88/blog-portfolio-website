@@ -1,4 +1,5 @@
 import React from "react"
+import { Helmet } from "react-helmet"
 import { Link, StaticQuery, graphql } from "gatsby"
 
 import layoutStyles from "./layout.module.css"
@@ -22,6 +23,18 @@ export default ({ children }) => (
     `}
     render={data => (
       <div className={layoutStyles.container}>
+        <Helmet>
+          <html lang="ko" />
+          <title>{data.site.siteMetadata.title}</title>
+          <meta
+            name="description"
+            content={data.site.siteMetadata.description}
+          />
+          <meta property="og:url" content="/" />
+          <meta property="og:type" content="article" />
+          <meta property="og:title" content={data.site.siteMetadata.title} />
+          {/* <meta property="og:image" content="/img/og-image.jpg" /> */}
+        </Helmet>
         <header>
           <Link to="/" style={{ textShadow: `none`, backgroundImage: `none` }}>
             <h3 style={{ display: `inline` }}>
