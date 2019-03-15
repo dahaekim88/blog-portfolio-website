@@ -1,11 +1,13 @@
 ---
 title: Value vs Reference
 date: 2019-03-07T15:00:00.000Z
+tags: ["javascript"]
 ---
+
 ## Javascript data types
 
-* 자바스크립트에는 두 가자의 data type, 즉 primitive type과 reference type이 존재한다.
-* 모든 변수는 생성될 때 메모리 상의 특정 공간을 차지하게 되고, 변수가 복사될 때에는 메모리 상의 값이 복사된다.
+- 자바스크립트에는 두 가자의 data type, 즉 primitive type과 reference type이 존재한다.
+- 모든 변수는 생성될 때 메모리 상의 특정 공간을 차지하게 되고, 변수가 복사될 때에는 메모리 상의 값이 복사된다.
 
 ## Primitive Types (Pass by Value)
 
@@ -13,11 +15,11 @@ date: 2019-03-07T15:00:00.000Z
 
 String, Number, Boolean과 같은 primitive type은 변수에 할당될 때 메모리 상에 고정된 크기로 저장되고 해당 변수가 데이터의 실제 값을 보관한다. 따라서 한 번 값을 생성하고 나면 메모리 영역에서 그 자체의 값 조작이 불가하고, 새로운 값을 카피하여 메모리의 또다른 주소값에 재할당 해야 한다.
 
-* null
-* undefined
-* Boolean
-* Number
-* String
+- null
+- undefined
+- Boolean
+- Number
+- String
 
 ```javascript
 var x = 2
@@ -35,9 +37,9 @@ Object나 Array 같은 reference type은 크기가 정해져 있지 않고 변�
 
 따라서 object가 담긴 변수를 다른 변수에 재할당 하는 경우에는 참조, 즉 메모리 상의 주소를 복사하여 저장하기 때문에, 동일한 object를 참조하는 두 변수 모두 object 내에서 관리하는 속성의 값이나 상태 조작이 가능하다.
 
-* Array
-* Object
-* Function
+- Array
+- Object
+- Function
 
 ```javascript
 var x = { foo: 3 }
