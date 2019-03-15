@@ -1,16 +1,23 @@
 module.exports = {
   siteMetadata: {
     title: `Dahae Kim`,
+    author: `Dahae Kim`,
+    description: `Web Developer's Blog and Porfolio Websites`,
+    siteUrl: `https://dahae-blog.netlify.com/`,
+    social: {
+      github: `dahaekim88`,
+      linkedin: `dahae-kim-ba590b31`,
+    },
   },
   plugins: [
-    // {
-    //   // keep as first gatsby-source-filesystem plugin for gatsby image support
-    //   resolve: "gatsby-source-filesystem",
-    //   options: {
-    //     path: `${__dirname}/static/img`,
-    //     name: "uploads",
-    //   },
-    // },
+    {
+      // keep as first gatsby-source-filesystem plugin for gatsby image support
+      resolve: "gatsby-source-filesystem",
+      options: {
+        path: `${__dirname}/static/img`,
+        name: "uploads",
+      },
+    },
     {
       resolve: "gatsby-source-filesystem",
       options: {
