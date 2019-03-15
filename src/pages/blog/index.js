@@ -1,41 +1,27 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
+import { graphql } from "gatsby"
 
 import Layout from "../../components/layout"
-import Header from "../../components/header"
-
-import styles from "./blog.module.css"
-import jsThumbnail from "../../images/javascript.png"
-
-const Post = props => (
-  <div className={styles.post}>
-    <div className={styles.main}>
-      <img src={props.thumbnail} className={styles.thumbnail} alt="" />
-      <div className={styles.description}>
-        <h2 className={styles.title}>{props.title}</h2>
-        <p>{props.date}</p>
-        {/* tags */}
-      </div>
-    </div>
-    <p className={styles.excerpt}>{props.excerpt}</p>
-  </div>
-)
+import Post from "../../components/post"
 
 export default ({ data }) => {
-  console.log(data)
+  const posts = data.allMarkdownRemark.edges
+
   return (
     <Layout>
-      <Header headerText="Blog" />
-      {data.allMarkdownRemark.edges.map(({ node }) => (
-        <Link to={`blog${node.fields.slug}`}>
+      {posts.map(({ node }) => (
+        <div>
           <Post
             key={node.id}
-            thumbnail={jsThumbnail}
             title={node.frontmatter.title}
             date={node.frontmatter.date}
+            description={node.frontmatter.description}
             excerpt={node.excerpt}
+            to={node.fields.slug}
+            tags={node.frontmatter.tags}
           />
-        </Link>
+          <div>{node.fields.tagSlugs}</div>
+        </div>
       ))}
       {/* pagination */}
     </Layout>
@@ -55,11 +41,13 @@ export const query = graphql`
           frontmatter {
             title
             date(formatString: "DD MMMM, YYYY")
+            description
+            tags
           }
           fields {
             slug
           }
-          excerpt
+          excerpt(pruneLength: 180)
         }
       }
     }
