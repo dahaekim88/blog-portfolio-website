@@ -3,7 +3,7 @@ import { Link, StaticQuery, graphql } from "gatsby"
 import styled from "styled-components"
 
 import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa"
-import profile from "../images/profile-pic.png"
+import profile from "../images/profile.png"
 
 const Container = styled.div`
   display: flex;
@@ -19,9 +19,9 @@ const Sns = styled.div`
 
 const StyledHref = styled.a`
   text-decoration: none;
-  color: #b7bcbc;
+  color: #1ca086;
   &:hover {
-    color: #1ca086;
+    color: #b7bcbc;
   }
 `
 
