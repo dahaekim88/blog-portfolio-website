@@ -2,6 +2,7 @@
 title: Value vs Reference
 date: 2019-03-07T15:00:00.000Z
 tags: ["javascript"]
+category: blog
 ---
 
 ## Javascript data types

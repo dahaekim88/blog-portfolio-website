@@ -1,9 +1,9 @@
 import React from "react"
-import styled from "styled-components"
-import Helmet from "react-helmet"
 import { Link, graphql } from "gatsby"
+import styled from "styled-components"
 
 import Layout from "../components/layout"
+import SEO from "../components/seo"
 import PostTag from "../components/tag"
 
 const PostTitle = styled.h1``
@@ -25,13 +25,11 @@ export default ({ data, pageContext }) => {
   const post = data.markdownRemark
   const { title, date, description, tags } = post.frontmatter
   const { previous, next } = pageContext
+  const editedTitle = `${title} - ${siteTitle}`
 
   return (
     <Layout>
-      <Helmet>
-        <title>{`${title} - ${siteTitle}`}</title>
-        <meta name="description" content={description} />
-      </Helmet>
+      <SEO title={editedTitle} description={description} />
       <div>
         <PostTitle>{title}</PostTitle>
         <PostDate>{date}</PostDate>
