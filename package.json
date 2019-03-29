@@ -5,6 +5,7 @@
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
+    "clean": "rimraf .cache public",
     "develop": "gatsby develop",
     "format": "prettier --write src/**/*.{js,jsx}",
     "start": "npm run develop",
@@ -13,7 +14,7 @@
   },
   "dependencies": {
     "babel-plugin-styled-components": "^1.10.0",
-    "gatsby": "^2.1.27",
+    "gatsby": "^2.3.4",
     "gatsby-plugin-manifest": "^2.0.24",
     "gatsby-plugin-netlify-cms": "^3.0.12",
     "gatsby-plugin-offline": "^2.0.24",
@@ -26,7 +27,7 @@
     "gatsby-source-filesystem": "^2.0.23",
     "gatsby-transformer-remark": "^2.3.1",
     "lodash": "^4.17.11",
-    "netlify-cms": "^2.6.0",
+    "netlify-cms": "^2.8.0",
     "prismjs": "^1.15.0",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
@@ -39,6 +40,7 @@
     "typography-theme-fairy-gates": "^0.16.19"
   },
   "devDependencies": {
-    "prettier": "^1.16.4"
+    "prettier": "^1.16.4",
+    "rimraf": "^2.6.3"
   }
 }
