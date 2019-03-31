@@ -46,5 +46,5 @@ input[type="email"]:focus,
 input[type="text"]:focus,
 textarea:focus {
   padding: 0.75rem;
-  box-shadow: 0 0 5px #1ca086;
+  box-shadow: 0 0 5px #8bcbc8;
 }
