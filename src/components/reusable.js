@@ -171,7 +171,7 @@ export const ProjectTitle = styled.div`
     opacity: 1;
   }
 
-  @media screen and (min-width: 601px) and (max-width: 980px) {
+  @media screen and (max-width: 980px) {
     font-size: 1rem;
   }
 
@@ -207,7 +207,7 @@ export const LinkButton = styled(Link)`
     border-color: #f1c3d3;
   }
 
-  @media screen and (min-width: 601px) and (max-width: 980px) {
+  @media screen and (max-width: 980px) {
     font-size: 0.7rem;
   }
 

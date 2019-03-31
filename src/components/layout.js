@@ -5,8 +5,6 @@ import styled from "styled-components"
 import SEO from "./seo"
 import SideBar from "./sidebar"
 
-const Layout = styled.div``
-
 const Main = styled.div`
   margin-left: 35%;
   padding: 3em;
@@ -14,7 +12,7 @@ const Main = styled.div`
 
   @media screen and (max-width: 980px) {
     margin-left: 0;
-    padding: 1em 3em 2em 3em;
+    padding: 1em 1em 2em 1em;
     width: 100%;
   }
 `
@@ -25,11 +23,11 @@ export default ({ children }) => (
     render={data => {
       const { title, description } = data.site.siteMetadata
       return (
-        <Layout>
+        <div>
           <SEO title={title} description={description} />
           <SideBar />
           <Main>{children}</Main>
-        </Layout>
+        </div>
       )
     }}
   />
