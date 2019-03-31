@@ -7,10 +7,11 @@ import wallpaper from "../images/wallpaper.png"
 import wallpaperWide from "../images/wallpaper_wide.png"
 
 const SideBar = styled.div`
-  background-image: url(${wallpaper});
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: scroll, fixed;
+  background-color: #000;
+  // background-image: url(${wallpaper});
+  // background-repeat: no-repeat;
+  // background-size: cover;
+  // background-attachment: scroll, fixed;
   height: 100%;
   width: 35%;
   position: fixed;
@@ -23,10 +24,10 @@ const SideBar = styled.div`
   flex-direction: column;
 
   @media screen and (max-width: 980px) {
-    background-image: url(${wallpaperWide});
-    background-attachment: scroll;
-    background-position: 0 0, 50%;
-    background-size: cover;
+    // background-image: url(${wallpaperWide});
+    // background-attachment: scroll;
+    // background-position: 0 0, 50%;
+    // background-size: cover;
     left: auto;
     padding: 6em 4em;
     position: relative;
@@ -55,6 +56,7 @@ const Footer = styled.div`
   margin: 1rem auto;
   position: relative;
   top: 5rem;
+  color: #fff;
 
   @media screen and (max-width: 600px) {
     top: 2rem;
@@ -65,6 +67,9 @@ export default () => (
   <SideBar>
     <Bio />
     <MenuContainer>
+      <NavMenu to="/" padding="0.5rem">
+        Home
+      </NavMenu>
       <NavMenu to="/blog" padding="0.5rem">
         Blog
       </NavMenu>
