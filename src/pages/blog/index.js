@@ -3,14 +3,14 @@ import { graphql } from "gatsby"
 
 import Layout from "../../components/layout"
 import Post from "../../components/post"
-import Title from "../../components/title"
+import { PageTitle } from "../../components/reusable"
 
 export default ({ data }) => {
   const posts = data.allMarkdownRemark.edges
 
   return (
     <Layout>
-      <Title>Blog</Title>
+      <PageTitle>Blog</PageTitle>
       {posts.map(({ node }) => (
         <div>
           <Post
