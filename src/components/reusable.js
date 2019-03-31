@@ -15,7 +15,6 @@ export const Row = styled.div`
 
 export const Col = styled.div`
   flex: 50%;
-  max-width: 50%;
 
   &:first-child {
     padding-right: 0.5rem;
@@ -23,6 +22,17 @@ export const Col = styled.div`
 
   &:last-child {
     padding-left: 0.5rem;
+  }
+
+  @media screen and (min-width: 981px) and (max-width: 1200px) {
+    flex: 100%;
+    &:first-child {
+      padding-right: 0;
+    }
+
+    &:last-child {
+      padding-left: 0;
+    }
   }
 
   @media screen and (max-width: 600px) {
@@ -113,6 +123,14 @@ export const Figure = styled.div`
   overflow: hidden;
   border-radius: 0.25em;
   margin: 2.175rem 0;
+
+  @media screen and (min-width: 981px) and (max-width: 1200px) {
+    margin: 1rem 0;
+  }
+
+  @media screen and (max-width: 600px) {
+    margin: 1rem 0;
+  }
 `
 
 export const Img = styled.img`
@@ -152,6 +170,14 @@ export const ProjectTitle = styled.div`
   ${Figure}:hover & {
     opacity: 1;
   }
+
+  @media screen and (min-width: 601px) and (max-width: 980px) {
+    font-size: 1rem;
+  }
+
+  @media screen and (min-width: 1201px) and (max-width: 1400px) {
+    font-size: 1rem;
+  }
 `
 
 export const LinkContainer = styled.div`
@@ -179,5 +205,13 @@ export const LinkButton = styled(Link)`
   &:hover {
     color: #f1c3d3;
     border-color: #f1c3d3;
+  }
+
+  @media screen and (min-width: 601px) and (max-width: 980px) {
+    font-size: 0.7rem;
+  }
+
+  @media screen and (min-width: 1201px) and (max-width: 1400px) {
+    font-size: 0.7rem;
   }
 `

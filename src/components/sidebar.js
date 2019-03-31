@@ -3,15 +3,9 @@ import styled from "styled-components"
 
 import Bio from "./bio"
 import { NavMenu } from "./navmenu"
-import wallpaper from "../images/wallpaper.png"
-import wallpaperWide from "../images/wallpaper_wide.png"
 
 const SideBar = styled.div`
-  background-color: #000;
-  // background-image: url(${wallpaper});
-  // background-repeat: no-repeat;
-  // background-size: cover;
-  // background-attachment: scroll, fixed;
+  background-color: #3c2e3d; // 735b69
   height: 100%;
   width: 35%;
   position: fixed;
@@ -24,10 +18,6 @@ const SideBar = styled.div`
   flex-direction: column;
 
   @media screen and (max-width: 980px) {
-    // background-image: url(${wallpaperWide});
-    // background-attachment: scroll;
-    // background-position: 0 0, 50%;
-    // background-size: cover;
     left: auto;
     padding: 6em 4em;
     position: relative;

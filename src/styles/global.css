@@ -19,10 +19,6 @@ img {
 input[type="email"],
 input[type="text"],
 textarea {
-  -moz-appearance: none;
-  -webkit-appearance: none;
-  -ms-appearance: none;
-  appearance: none;
   background: #f7f7f7;
   border-radius: 0.35em;
   border: 2px solid transparent;
@@ -42,9 +38,13 @@ input[type="text"] {
   height: 2.75em;
 }
 
+textarea {
+  margin-bottom: 1rem;
+}
+
 input[type="email"]:focus,
 input[type="text"]:focus,
 textarea:focus {
   padding: 0.75rem;
-  box-shadow: 0 0 5px #1ca086;
+  box-shadow: 0 0 5px #8bcbc8;
 }
