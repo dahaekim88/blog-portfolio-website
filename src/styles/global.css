@@ -1,12 +1,50 @@
 html {
-  background-color: fff;
+  background-color: #fff;
 }
 
 a {
   background-image: none;
+  text-shadow: none;
+  color: #f1c3d3;
 }
 
-p,
-img {
+p {
   margin-bottom: 0.45rem;
+}
+
+img {
+  margin-bottom: 0;
+}
+
+input[type="email"],
+input[type="text"],
+textarea {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  background: #f7f7f7;
+  border-radius: 0.35em;
+  border: 2px solid transparent;
+  color: inherit;
+  display: block;
+  outline: 0;
+  padding: 0 0.75em;
+  text-decoration: none;
+  width: 100%;
+  font-size: 12pt;
+  padding: 0.75rem;
+  margin-top: 1rem;
+}
+
+input[type="email"],
+input[type="text"] {
+  height: 2.75em;
+}
+
+input[type="email"]:focus,
+input[type="text"]:focus,
+textarea:focus {
+  padding: 0.75rem;
+  box-shadow: 0 0 5px #1ca086;
 }

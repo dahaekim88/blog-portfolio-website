@@ -2,6 +2,7 @@
 title: "30대 비전공자, 코딩에 입문하다"
 date: 2019-02-24T15:00:00.000Z
 tags: ["career", "coding"]
+category: blog
 ---
 
 ## 어려운 결정, 퇴사

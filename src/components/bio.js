@@ -2,48 +2,35 @@ import React from "react"
 import { Link, StaticQuery, graphql } from "gatsby"
 import styled from "styled-components"
 
+import { Container, StyledHref } from "../components/reusable"
 import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa"
-import profile from "../images/profile-pic.png"
-
-const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-`
+import profile from "../images/icon.png"
 
 const Sns = styled.div`
   display: inline-block;
-  margin: 0 0.45rem;
-`
-
-const StyledHref = styled.a`
-  text-decoration: none;
-  color: #b7bcbc;
-  &:hover {
-    color: #1ca086;
-  }
+  margin: 0.45rem;
 `
 
 export default () => (
   <StaticQuery
     query={query}
     render={data => {
-      const { title, social } = data.site.siteMetadata
+      const { social } = data.site.siteMetadata
 
       return (
         <Container>
           <Link to="/" style={{ textShadow: `none`, backgroundImage: `none` }}>
             <img src={profile} alt="dahaekim" style={{ borderRadius: "50%" }} />
           </Link>
-          <h2 style={{ marginTop: `1rem` }}>{title}</h2>
-          <p>Web Developer</p>
+          {/* <h2 style={{ marginTop: `1rem` }}>{title}</h2>
+          <p>Web Developer</p> */}
           <div>
             <Sns>
               <StyledHref
                 href={`https://github.com/${social.github}`}
                 rel="noopener noreferrer"
                 target="_blank"
+                color="#fff"
               >
                 <FaGithub />
               </StyledHref>
@@ -53,20 +40,17 @@ export default () => (
                 href={`https://linkedin.com/in/${social.linkedin}`}
                 rel="noopener noreferrer"
                 target="_blank"
+                color="#fff"
               >
                 <FaLinkedin />
               </StyledHref>
             </Sns>
             <Sns>
-              <StyledHref href={`mailto:${social.email}`}>
+              <StyledHref href={`mailto:${social.email}`} color="#fff">
                 <FaEnvelope />
               </StyledHref>
             </Sns>
           </div>
-          {/* <div>
-            <NavMenu to="/blog">Articles</NavMenu>
-            <NavMenu to="/projects">Projects</NavMenu>
-          </div> */}
         </Container>
       )
     }}

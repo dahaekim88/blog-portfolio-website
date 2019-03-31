@@ -3,12 +3,14 @@ import { graphql } from "gatsby"
 
 import Layout from "../../components/layout"
 import Post from "../../components/post"
+import Title from "../../components/title"
 
 export default ({ data }) => {
   const posts = data.allMarkdownRemark.edges
 
   return (
     <Layout>
+      <Title>Blog</Title>
       {posts.map(({ node }) => (
         <div>
           <Post
@@ -31,8 +33,8 @@ export default ({ data }) => {
 export const query = graphql`
   query {
     allMarkdownRemark(
+      filter: { frontmatter: { category: { eq: "blog" } } }
       sort: { fields: [frontmatter___date], order: DESC }
-      limit: 5
     ) {
       totalCount
       edges {

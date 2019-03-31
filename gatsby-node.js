@@ -18,6 +18,7 @@ exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
 
   const blogPostTemplate = path.resolve("src/templates/blog-post.js")
+  const projectTemplate = path.resolve("src/templates/project.js")
   const tagTemplate = path.resolve("src/templates/tags.js")
 
   return graphql(`
@@ -30,6 +31,7 @@ exports.createPages = ({ graphql, actions }) => {
             }
             frontmatter {
               tags
+              category
             }
           }
         }
@@ -40,14 +42,22 @@ exports.createPages = ({ graphql, actions }) => {
       return Promise.reject(result.errors)
     }
 
-    const posts = result.data.allMarkdownRemark.edges
+    const results = result.data.allMarkdownRemark.edges
+
+    const posts = results.filter(
+      result => result.node.frontmatter.category === "blog"
+    )
+
+    const projects = results.filter(
+      result => result.node.frontmatter.category === "projects"
+    )
 
     posts.forEach((post, index) => {
       const previous = index === posts.length - 1 ? null : posts[index + 1].node
       const next = index === 0 ? null : posts[index - 1].node
 
       createPage({
-        path: `/${post.node.fields.slug}`,
+        path: `${post.node.fields.slug}`,
         component: blogPostTemplate,
         context: {
           // Data passed to context is available
@@ -55,6 +65,18 @@ exports.createPages = ({ graphql, actions }) => {
           slug: post.node.fields.slug,
           previous,
           next,
+        },
+      })
+    })
+
+    projects.forEach(project => {
+      createPage({
+        path: `${project.node.fields.slug}`,
+        component: projectTemplate,
+        context: {
+          // Data passed to context is available
+          // in page queries as GraphQL variables.
+          slug: project.node.fields.slug,
         },
       })
     })

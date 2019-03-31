@@ -8,11 +8,6 @@ import PostTag from "../components/tag"
 
 const PostTitle = styled.h1``
 
-const PostDate = styled.span`
-  color: #8e8e8e;
-  font-size: 0.8rem;
-`
-
 const Navigation = styled.div`
   display: flex;
   flex-wrap: wrap;
@@ -23,7 +18,7 @@ const Navigation = styled.div`
 export default ({ data, pageContext }) => {
   const { title: siteTitle } = data.site.siteMetadata
   const post = data.markdownRemark
-  const { title, date, description, tags } = post.frontmatter
+  const { title, description, tags, image, demo, source } = post.frontmatter
   const { previous, next } = pageContext
   const editedTitle = `${title} - ${siteTitle}`
 
@@ -32,11 +27,24 @@ export default ({ data, pageContext }) => {
       <SEO title={editedTitle} description={description} />
       <div>
         <PostTitle>{title}</PostTitle>
-        <PostDate>{date}</PostDate>
         {` `}
         <PostTag tags={tags} />
 
+        <img src={image} alt={title} />
+
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
+
+        <a href={demo} target="_blank" rel="noopener noreferrer">
+          Demo
+        </a>
+        {` `}
+        {source === "private" ? (
+          <span>Private Source</span>
+        ) : (
+          <a href={source} target="_blank" rel="noopener noreferrer">
+            Source
+          </a>
+        )}
 
         <Navigation>
           <div>
@@ -71,9 +79,12 @@ export const query = graphql`
       html
       frontmatter {
         title
-        date(formatString: "DD MMMM, YYYY")
         description
         tags
+        image
+        gif
+        demo
+        source
       }
     }
   }
