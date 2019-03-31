@@ -8,21 +8,19 @@ const TagLink = styled(Link)`
   text-decoration: none;
 `
 
-export default ({ tags }) => {
-  return (
-    <>
-      {tags.map((tag, index) => {
-        let separator = ", "
-        if (index + 1 === tags.length) {
-          separator = ""
-        }
-        return (
-          <span key={tag}>
-            <TagLink to={`tags/${tag}`}>{tag}</TagLink>
-            {separator}
-          </span>
-        )
-      })}
-    </>
-  )
-}
+export default ({ tags }) => (
+  <>
+    {tags.map((tag, index) => {
+      let separator = ", "
+      if (index + 1 === tags.length) {
+        separator = ""
+      }
+      return (
+        <span key={tag}>
+          <TagLink to={`tags/${tag}`}>{tag}</TagLink>
+          {separator}
+        </span>
+      )
+    })}
+  </>
+)
