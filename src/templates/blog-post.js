@@ -1,24 +1,10 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
-import styled from "styled-components"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import PostTag from "../components/tag"
-
-const PostTitle = styled.h1``
-
-const PostDate = styled.span`
-  color: #8e8e8e;
-  font-size: 0.8rem;
-`
-
-const Navigation = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  padding: 0;
-`
+import { PostTitle, PostDate, Navigation } from "../components/reusable"
 
 export default ({ data, pageContext }) => {
   const { title: siteTitle } = data.site.siteMetadata
@@ -42,7 +28,7 @@ export default ({ data, pageContext }) => {
           <div>
             {previous && (
               <Link to={previous.fields.slug} rel="prev">
-                ← previous post
+                &laquo; previous
                 {/* ← previous post: {previous.frontmatter.title}  */}
               </Link>
             )}
@@ -50,7 +36,7 @@ export default ({ data, pageContext }) => {
           <div>
             {next && (
               <Link to={next.fields.slug} rel="next">
-                next post →{/* next post: {next.frontmatter.title} → */}
+                next &raquo;{/* next post: {next.frontmatter.title} → */}
               </Link>
             )}
           </div>
