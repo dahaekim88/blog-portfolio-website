@@ -2,7 +2,7 @@
 title: "Memory Match Game"
 date: 2018-10-14T15:00:00.000Z
 description: "One of my favorite cartoon 'The Simpsons' themed card matching game."
-tags: ["vanilla javascript", "self-project"]
+tags: ["vanilla javascript", "individual-project"]
 image: /assets/memory-match-game.jpg
 gif: /assets/memory-match-game.jpg
 demo: https://dahaekim88.github.io/MemoryMatchGame/

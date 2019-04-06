@@ -5,8 +5,8 @@ tags: ["team-project", "react", "nodejs", "full-stack"]
 description: "A car rental web application, collaborating with a startup company 'Lift29'"
 image: /assets/mycarcar.jpg
 gif: /assets/images/mycarcar.jpg
-demo: http://13.209.112.131/
-source: private
+demo: http://13.125.130.78
+source: https://github.com/codestates/client-lift29-mycarcar-web
 category: projects
 ---
 
