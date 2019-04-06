@@ -113,7 +113,7 @@ export const Navigation = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding: 0;
+  padding: 2rem 0;
 `
 
 export const Figure = styled.div`
