@@ -55,8 +55,6 @@ export const StyledHref = styled.a`
   }
 `
 
-export const StyledLink = styled(Link)``
-
 export const StyledButton = styled.button`
   background-color: transparent;
   border-radius: 0.35em;

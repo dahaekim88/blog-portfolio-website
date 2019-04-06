@@ -4,7 +4,12 @@ import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import PostTag from "../components/tag"
-import { PostTitle, PostDate, Navigation } from "../components/reusable"
+import {
+  PostTitle,
+  PostDate,
+  Navigation,
+  StyledButton,
+} from "../components/reusable"
 
 export default ({ data, pageContext }) => {
   const { title: siteTitle } = data.site.siteMetadata
@@ -28,15 +33,19 @@ export default ({ data, pageContext }) => {
           <div>
             {previous && (
               <Link to={previous.fields.slug} rel="prev">
-                &laquo; previous
-                {/* ← previous post: {previous.frontmatter.title}  */}
+                <StyledButton>
+                  &laquo; previous
+                  {/* ← previous post: {previous.frontmatter.title}  */}
+                </StyledButton>
               </Link>
             )}
           </div>
           <div>
             {next && (
               <Link to={next.fields.slug} rel="next">
-                next &raquo;{/* next post: {next.frontmatter.title} → */}
+                <StyledButton>
+                  next &raquo;{/* next post: {next.frontmatter.title} → */}
+                </StyledButton>
               </Link>
             )}
           </div>

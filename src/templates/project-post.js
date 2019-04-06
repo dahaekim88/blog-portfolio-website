@@ -21,25 +21,24 @@ export default ({ data }) => {
     <Layout>
       <SEO title={editedTitle} description={description} />
       <div>
-        <PostTitle>{title}</PostTitle>
-        {` `}
-        <PostTag tags={tags} />
-
         <Img src={image} alt={title} style={{ margin: "2rem 0" }} />
 
-        <div dangerouslySetInnerHTML={{ __html: post.html }} />
+        <div>
+          <PostTitle>{title}</PostTitle>
+          <PostTag tags={tags} />
+        </div>
 
-        <StyledHref href={demo} target="_blank" rel="noopener noreferrer">
-          <StyledButton>Demo</StyledButton>
-        </StyledHref>
-        {` `}
-        {source === "private" ? (
-          <StyledButton>Private Source</StyledButton>
-        ) : (
+        <div style={{ marginBottom: "2rem" }}>
+          <StyledHref href={demo} target="_blank" rel="noopener noreferrer">
+            <StyledButton>Demo</StyledButton>
+          </StyledHref>
+          {` `}
           <StyledHref href={source} target="_blank" rel="noopener noreferrer">
             <StyledButton>Source</StyledButton>
           </StyledHref>
-        )}
+        </div>
+
+        <div dangerouslySetInnerHTML={{ __html: post.html }} />
       </div>
     </Layout>
   )
