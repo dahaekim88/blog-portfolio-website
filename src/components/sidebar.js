@@ -135,7 +135,9 @@ export default () => (
     <Footer>
       © dada {new Date().getFullYear()}, Built with
       {` `}
-      <a href="https://www.gatsbyjs.org">Gatsby</a>
+      <a href="https://www.gatsbyjs.org" style={{ color: "#f1c3d3" }}>
+        Gatsby
+      </a>
     </Footer>
     <Mouse>
       <Scroll />
