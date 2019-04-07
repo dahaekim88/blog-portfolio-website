@@ -14,14 +14,14 @@ import {
 export default ({ data }) => {
   const { title: siteTitle } = data.site.siteMetadata
   const post = data.markdownRemark
-  const { title, description, tags, image, demo, source } = post.frontmatter
+  const { title, description, tags, gif, demo, source } = post.frontmatter
   const editedTitle = `${title} - ${siteTitle}`
 
   return (
     <Layout>
       <SEO title={editedTitle} description={description} />
       <div>
-        <Img src={image} alt={title} style={{ margin: "2rem 0" }} />
+        <Img src={gif} alt={title} style={{ margin: "2rem 0" }} />
 
         <div>
           <PostTitle>{title}</PostTitle>
@@ -57,7 +57,6 @@ export const query = graphql`
         title
         description
         tags
-        image
         gif
         demo
         source

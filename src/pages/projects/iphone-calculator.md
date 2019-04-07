@@ -4,7 +4,7 @@ date: 2018-10-16T15:00:00.000Z
 description: "iPhone Calculator that can be operated by both keyboard and mouse."
 tags: ["vanilla javascript", "individual-project"]
 image: /assets/calculator.jpg
-gif: /assets/calculator.jpg
+gif: /assets/calculator.gif
 demo: https://dahaekim88.github.io/Calculator/
 source: https://github.com/dahaekim88/Calculator
 category: projects
