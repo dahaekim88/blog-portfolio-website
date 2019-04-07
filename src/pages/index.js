@@ -16,14 +16,17 @@ export default ({ data }) => {
   const results = data.allMarkdownRemark.edges
 
   const posts = results.filter(
-    result => result.node.frontmatter.category === "blog"
+    result =>
+      result.node.frontmatter.category === "blog" &&
+      result.node.frontmatter.open === true
   )
+  // console.log("posts: ", posts)
   const post = posts[0].node
 
   const projects = results
     .filter(result => result.node.frontmatter.category === "projects")
     .filter((project, index) => index === 0 || index === 1)
-  console.log(projects)
+  // console.log("projects: ", projects)
 
   return (
     <Layout>
@@ -110,6 +113,7 @@ export const query = graphql`
             tags
             image
             category
+            open
           }
           fields {
             slug

@@ -14,6 +14,13 @@ collections:
       - { name: path, label: Path, widget: string }
       - { name: title, label: Title, widget: string }
       - { name: date, label: Date, widget: date }
+      - { name: tags, label: Tags, widget: list, default: ["javascript"] }
+      - {
+          name: category,
+          label: Category,
+          widget: select,
+          options: ["blog", "projects"],
+        }
       - { name: description, label: Description, widget: text, required: false }
       - { name: body, label: Body, widget: markdown }
   - name: Projects

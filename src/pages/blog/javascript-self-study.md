@@ -4,6 +4,7 @@ date: 2019-03-06T15:00:00.000Z
 description: 자바스크립트를 혼자 공부하면서 많은 도움이 되었던 다양한 온라인 자료를 정리하여 공유하고자 합니다.
 tags: ["javascript", "self-study"]
 category: blog
+open: false
 ---
 
 <br />

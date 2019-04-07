@@ -33,7 +33,7 @@ export default ({ data }) => {
 export const query = graphql`
   query {
     allMarkdownRemark(
-      filter: { frontmatter: { category: { eq: "blog" } } }
+      filter: { frontmatter: { category: { eq: "blog" }, open: { eq: true } } }
       sort: { fields: [frontmatter___date], order: DESC }
     ) {
       totalCount
