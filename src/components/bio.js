@@ -20,7 +20,7 @@ export default () => (
       return (
         <Container>
           <Link to="/" style={{ textShadow: `none`, backgroundImage: `none` }}>
-            <img src={profile} alt="dahaekim" style={{ borderRadius: "50%" }} />
+            <img src={profile} alt="dada" style={{ borderRadius: "50%" }} />
           </Link>
           {/* <h2 style={{ marginTop: `1rem` }}>{title}</h2>
           <p>Web Developer</p> */}

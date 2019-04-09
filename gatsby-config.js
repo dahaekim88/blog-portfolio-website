@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `Dahae Kim`,
-    author: `Dahae Kim`,
-    description: `Dahae's Personal Website for Blog & Portfolio`,
+    title: `DADA`,
+    author: `dada`,
+    description: `DaDa's Personal Website for Blog & Portfolio`,
     siteUrl: `https://dahae-blog.netlify.com/`,
     social: {
       github: `dahaekim88`,
