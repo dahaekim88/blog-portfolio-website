@@ -6,6 +6,10 @@ category: blog
 open: true
 ---
 
+### Intro
+
+React 공부를 그동안 해오긴 했지만, 정작 프로젝트에 직접 적용하여 사용하려고 보니 만만치 않았다. React의 기본 개념을 다시 한 번 다지면서, 직접 응용해 나가는 과정을 기록해보고자 한다.
+
 ### Component별로 나눠서 하는 관리의 이점
 
 - 코드를 모듈화하여 컴포넌트 재사용이 가능하여, 중복되는 코드를 줄일 수 있고 유지보수에도 좋다.
@@ -16,7 +20,7 @@ open: true
 
 state를 통해 상태를 관리하고 변경 가능하며, 이를 자식 컴포넌트에 props로 넘겨줌으로써 자식 컴포넌트와도 서로 interaction(상호작용)이 가능하다.
 
-### React Lifecycle 중 `componentDidMount` 의 사용
+### React Lifecycle - `componentDidMount` 의 사용
 
 - HTML이 로딩 되자마자 호출
 - 주로, DOM에 관련된 작업 및 이벤트 리스닝 관련 작업을 여기서 하는데, app.tsx 에서 브라우저 창의 뒤로가기, 앞으로가기 버튼을 누를 때 발생하는 사이드바 토글 기능을 위한 이벤트 리스너를 여기에 넣어주었다.
@@ -40,7 +44,7 @@ state를 통해 상태를 관리하고 변경 가능하며, 이를 자식 컴포
 
 DOM window 객체는 브라우저의 history 객체를 통해 세션 히스토리에 접근할 수 있게 해주는데, 사용자의 방문 흔적(history)를 통해 back & forth로 이동할 있도록 해주는 다양한 메서드와 프러퍼티를 제공해주고 있었다.
 
-- **URL 변경 :** `history.pushState()` + `window.onpopsatate`  
+- **URL 변경: _history.pushState()_ + _window.onpopsatate_**  
   `history.pushState()`는 history entries를 추가 또는 변경해주어 history stack에 사용자의 흔적을 state로 남기게 만들어, single page application 임에도 불구하고 URL이 변경된다.
 
   이는 주로 `window.onpopstate`와 밀접하게 연동되어 사용되는데, `popstate` 이벤트는 back & forward 버튼 클릭과 같은 브라우저 상의 액션에 의해 history entry가 변경될 때 발생하는 이벤트로, history entry의 state를 가지고 있기 때문에 componentDidMount 시점에 popstate를 리스닝하고 있다가 화면 전환을 할 수 있도록 처리해주었다.
@@ -48,10 +52,10 @@ DOM window 객체는 브라우저의 history 객체를 통해 세션 히스토�
 
 **URL은 잘 변경이 되었지만, 해당 URL에 적합한 컴포넌트는 어떻게 렌더링 해줘야 할까?**
 
-- **화면 전환 :** `forceUpdate()`  
+- **화면 전환: _forceUpdate()_**  
   변경된 URL에 적합한 화면 전환을 위해서는, React API의 `forceUpdate()` 메서드를 사용하여 그에 맞는 컴포넌트가 렌더링 되도록 해주었다. `forceUpdate()` 는 shouldComponentUpdate() 단계를 스킵하고 무조건 컴포넌트의 render() 메서드가 호출되도록 해주는 API로, 일반적으로는 잘 사용하지 않는듯 하다..
 
-- **현재 URL 확인 :** `location.pathname`  
+- **현재 URL 확인: _location.pathname_**  
   `location.pathname`을 통해 현재 URL 상태를 확인한 다음, switch ~ case 문으로 현재 URL의 상태에 따라 컴포넌트 렌더링을 해주었다.
 
 **프로젝트에 실제로 사용했던 코드 예제**
