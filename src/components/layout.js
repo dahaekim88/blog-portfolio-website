@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react"
 import { StaticQuery, graphql } from "gatsby"
 import styled from "styled-components"
-import MdArrowUp from "react-ionicons/lib/MdArrowUp"
+import { FaAngleUp } from "react-icons/fa"
 
 import SEO from "./seo"
 import SideBar from "./sidebar"
@@ -27,11 +27,11 @@ const BackToTop = styled.a`
   border: none;
   outline: none;
   cursor: pointer;
-  padding: 10px;
+  padding: 5px 10px;
   font-size: 10px;
   text-align: center;
   background: #8bcbc8;
-  opacity: 0.3
+  opacity: 0.5
 
   &:hover {
     opacity: 1;
@@ -40,12 +40,14 @@ const BackToTop = styled.a`
 
 export default ({ children }) => {
   const [display, setDisplay] = useState("none")
-  console.log("display: ", display)
+  // console.log("display: ", display)
+  const [height, setHeight] = useState(0)
+  // console.log("height: ", height)
 
   const showButton = () => {
     if (
-      document.body.scrollTop > 20 ||
-      document.documentElement.scrollTop > 20
+      document.body.scrollTop > height ||
+      document.documentElement.scrollTop > height
     ) {
       setDisplay("block")
     } else {
@@ -56,6 +58,10 @@ export default ({ children }) => {
   const scrollToTop = () => {
     document.body.scrollTop = 0
     document.documentElement.scrollTop = 0
+  }
+
+  const getElementHeight = height => {
+    setHeight(height)
   }
 
   useEffect(() => {
@@ -72,10 +78,11 @@ export default ({ children }) => {
         return (
           <div>
             <SEO title={title} description={description} />
-            <SideBar />
+            <SideBar getElementHeight={getElementHeight} />
             <Main>{children}</Main>
             <BackToTop onClick={scrollToTop} style={{ display }}>
-              <MdArrowUp style={{ color: "#fff" }} />
+              <FaAngleUp style={{ color: "#fff", padding: "0" }} />
+              <div style={{ color: "#fff" }}>TOP</div>
             </BackToTop>
           </div>
         )

@@ -1,10 +1,10 @@
-import React from "react"
+import React, { useEffect } from "react"
 import styled from "styled-components"
 
 import Bio from "./bio"
 import { NavMenu } from "./navmenu"
 
-const SideBar = styled.div`
+const Navbar = styled.div`
   background-color: #3c2e3d; // 735b69
   position: fixed;
   top: 0;
@@ -118,29 +118,41 @@ const Scroll = styled.div`
   }
 `
 
-export default () => (
-  <SideBar>
-    <Bio />
-    <MenuContainer>
-      <NavMenu to="/" padding="0.5rem">
-        Home
-      </NavMenu>
-      <NavMenu to="/blog" padding="0.5rem">
-        Blog
-      </NavMenu>
-      <NavMenu to="/projects" padding="0.5rem">
-        Projects
-      </NavMenu>
-    </MenuContainer>
-    <Footer>
-      © dada {new Date().getFullYear()}, Built with
-      {` `}
-      <a href="https://www.gatsbyjs.org" style={{ color: "#f1c3d3" }}>
-        Gatsby
-      </a>
-    </Footer>
-    <Mouse>
-      <Scroll />
-    </Mouse>
-  </SideBar>
-)
+export default ({ getElementHeight }) => {
+  let navbar = null
+
+  useEffect(() => {
+    getElementHeight(navbar.clientHeight)
+  })
+
+  return (
+    <Navbar
+      ref={element => {
+        navbar = element
+      }}
+    >
+      <Bio />
+      <MenuContainer>
+        <NavMenu to="/" padding="0.5rem">
+          Home
+        </NavMenu>
+        <NavMenu to="/blog" padding="0.5rem">
+          Blog
+        </NavMenu>
+        <NavMenu to="/projects" padding="0.5rem">
+          Projects
+        </NavMenu>
+      </MenuContainer>
+      <Footer>
+        © dada {new Date().getFullYear()}, Built with
+        {` `}
+        <a href="https://www.gatsbyjs.org" style={{ color: "#f1c3d3" }}>
+          Gatsby
+        </a>
+      </Footer>
+      <Mouse>
+        <Scroll />
+      </Mouse>
+    </Navbar>
+  )
+}
