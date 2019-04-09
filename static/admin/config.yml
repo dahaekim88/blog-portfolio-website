@@ -21,6 +21,7 @@ collections:
           widget: select,
           options: ["blog", "projects"],
         }
+      - { name: open, label: Open, widget: boolean, default: true }
       - { name: description, label: Description, widget: text, required: false }
       - { name: body, label: Body, widget: markdown }
   - name: Projects
