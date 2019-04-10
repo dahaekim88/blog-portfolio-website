@@ -47,3 +47,12 @@ textarea:focus {
   padding: 0.75rem;
   box-shadow: 0 0 5px #8bcbc8;
 }
+
+span.active {
+  text-decoration: overline;
+}
+
+a.disable {
+  pointer-events: none;
+  cursor: default;
+}
