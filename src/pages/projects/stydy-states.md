@@ -14,7 +14,7 @@ category: projects
 ### 프로젝트
 
 - 이름: Study States
-- 기간: 19.03월 - 19.04월
+- 기간: 19.03월 - 진행 중 (4월 중 완료 예정)
 - 인원: 2명
 - 소개:
   - Code States에서 운영하는 온라인 그룹 스터디 플랫폼
@@ -34,8 +34,6 @@ Full-stack
 - Business Tool: Notion, Asana, Slack, Figma
 
 ### 작업 내용
-
-**기존 React 코드를 바탕으로 GatsbyJS로 전환 작업 중**
 
 - 기존 React 코드를 바탕으로 GatsbyJS로 전환 작업
 - Node.js를 기반으로 한 API 서버 구현 및 데이터 베이스 설계
