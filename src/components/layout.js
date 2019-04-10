@@ -27,14 +27,30 @@ const BackToTop = styled.a`
   border: none;
   outline: none;
   cursor: pointer;
-  padding: 5px 10px;
-  font-size: 10px;
+  // padding: 5px 10px;
+  width: 40px;
+  height: 40px;
   text-align: center;
   background: #8bcbc8;
   opacity: 0.5
-
+  
   &:hover {
     opacity: 1;
+  }
+
+  .icon {
+    color: #fff;
+    font-size: 12px;
+  }
+
+  div {
+    color: #fff;
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: -10px;
   }
 `
 
@@ -81,8 +97,8 @@ export default ({ children }) => {
             <SideBar getElementHeight={getElementHeight} />
             <Main>{children}</Main>
             <BackToTop onClick={scrollToTop} style={{ display }}>
-              <FaAngleUp style={{ color: "#fff", padding: "0" }} />
-              <div style={{ color: "#fff" }}>TOP</div>
+              <FaAngleUp className="icon" />
+              <div>TOP</div>
             </BackToTop>
           </div>
         )
