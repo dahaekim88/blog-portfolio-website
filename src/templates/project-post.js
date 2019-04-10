@@ -33,9 +33,19 @@ export default ({ data }) => {
             <StyledButton>Demo</StyledButton>
           </StyledHref>
           {` `}
-          <StyledHref href={source} target="_blank" rel="noopener noreferrer">
-            <StyledButton>Source</StyledButton>
-          </StyledHref>
+          {source === "private" ? (
+            <StyledHref
+              class="disable"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <StyledButton>Private Source</StyledButton>
+            </StyledHref>
+          ) : (
+            <StyledHref href={source} target="_blank" rel="noopener noreferrer">
+              <StyledButton>Source</StyledButton>
+            </StyledHref>
+          )}
         </div>
 
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
