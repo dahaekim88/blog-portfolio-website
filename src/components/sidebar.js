@@ -2,7 +2,7 @@ import React, { useEffect } from "react"
 import styled from "styled-components"
 
 import Bio from "./bio"
-import { NavMenu } from "./navmenu"
+import NavMenu from "./navmenu"
 
 const Navbar = styled.div`
   background-color: #3c2e3d; // 735b69

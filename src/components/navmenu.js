@@ -10,16 +10,16 @@ const MenuLink = styled(Link)`
     text-decoration: overline;
   }
 
-  // .active {
-  //   text-decoration: overline;
-  // }
+  .active {
+    text-decoration: overline;
+  }
 `
 const Menu = styled.div`
   display: inline-block;
   padding: 0.5rem 0.5rem 0.5rem ${props => props.padding};
 `
 
-export const NavMenu = props => {
+export default ({ to, padding, children }) => {
   const [linkStyle, setLinkStyle] = useState("")
   // let clicked = null
 
@@ -34,15 +34,15 @@ export const NavMenu = props => {
   }
 
   return (
-    <Menu padding={props.padding}>
+    <Menu padding={padding}>
       {/* <span
         ref={element => {
           clicked = element
         }}
         onClick={handleClick}
       > */}
-      <MenuLink to={props.to} className={linkStyle} onClick={handleClick}>
-        {props.children}
+      <MenuLink to={to} className={linkStyle} onClick={handleClick}>
+        {children}
       </MenuLink>
       {/* </span> */}
     </Menu>
