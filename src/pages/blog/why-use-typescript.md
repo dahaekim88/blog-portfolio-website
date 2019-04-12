@@ -104,9 +104,9 @@ export default class Modal extends Component<IModalProps> {
 
 [>> [Reference] Migrating from Javascript](https://www.typescriptlang.org/docs/handbook/migrating-from-javascript.html)
 
-### React + Typescript
+### Conclusion
 
-첫 타입스크립트의 적용이었던 만큼, 아주 최소한의 bare minimum 기능만 사용하는데 그쳤지만, 타입스크립트의 이점을 확실히 느낄 수 있는 기회였다. 이를 계기로 앞으로도 정적 타입에 대한 관심을 더 가지고, 타입스크립트의 advance feature까지 습득하여 더욱 효과적으로 잘 적용해보고 싶다.
+첫 타입스크립트의 적용이었던 만큼, 아주 최소한의 bare minimum 기능만 사용하는데 그쳤지만, 타입스크립트의 이점을 확실히 느낄 수 있는 기회였다. 이를 계기로 앞으로도 정적 타입에 대한 관심을 더 가지고, 타입스크립트의 advanced features까지 습득하여 더욱 효과적으로 잘 적용해보고 싶다.
 
 [>> Getting Started · TypeScript Deep Dive](https://basarat.gitbooks.io/typescript/docs/getting-started.html)
 
