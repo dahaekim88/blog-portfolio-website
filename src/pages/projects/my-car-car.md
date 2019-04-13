@@ -56,6 +56,8 @@ Full-stack (팀원과 client-server 격주로 진행)
 3. 모듈화의 중요성
 4. 리팩토링, 그리고 유지보수
 
+[>> 블로그 포스트](https://www.dahae.kim/blog/second-project-retrospectives/)
+
 <br />
 
 ---
