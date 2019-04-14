@@ -1,5 +1,8 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+
 html {
   background-color: #fff;
+  font-size: medium;
 }
 
 a {
@@ -9,6 +12,8 @@ a {
 
 p {
   margin-bottom: 0.45rem;
+  font-family: "Roboto", sans-serif;
+  line-height: 1.8em;
 }
 
 img {

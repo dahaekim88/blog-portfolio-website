@@ -158,7 +158,7 @@ export const ProjectTitle = styled.div`
   left: 0;
   top: 35%;
   font-weight: 600;
-  font-size: 1.5rem;
+  font-size: 2.3rem;
   text-align: center;
   text-transform: uppercase;
   color: white;
@@ -169,12 +169,12 @@ export const ProjectTitle = styled.div`
     opacity: 1;
   }
 
-  @media screen and (max-width: 980px) {
-    font-size: 1rem;
+  @media screen and (min-width: 1201px) and (max-width: 1400px) {
+    font-size: 2rem;
   }
 
-  @media screen and (min-width: 1201px) and (max-width: 1400px) {
-    font-size: 1rem;
+  @media screen and (max-width: 600px) {
+    font-size: 1.5rem;
   }
 `
 
@@ -194,22 +194,25 @@ export const LinkContainer = styled.div`
 `
 
 export const LinkButton = styled(Link)`
-  width: 30%;
+  width: 20%;
   text-align: center;
   color: #b7bcbc;
   border: 3px solid #b7bcbc;
   border-radius: 0.35em;
+  padding: 0.5rem 0;
 
   &:hover {
     color: #f1c3d3;
     border-color: #f1c3d3;
   }
 
-  @media screen and (max-width: 980px) {
-    font-size: 0.7rem;
+  @media screen and (min-width: 1201px) and (max-width: 1400px) {
+    font-size: 1rem;
   }
 
-  @media screen and (min-width: 1201px) and (max-width: 1400px) {
+  @media screen and (max-width: 600px) {
+    width: 30%;
+    padding: 0;
     font-size: 0.7rem;
   }
 `
