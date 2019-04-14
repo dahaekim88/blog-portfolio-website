@@ -53,11 +53,16 @@ textarea:focus {
   box-shadow: 0 0 5px #8bcbc8;
 }
 
-span.active {
-  text-decoration: overline;
+#bio,
+#projects {
+  background-color: #f7f7f7;
 }
 
-a.disable {
-  pointer-events: none;
-  cursor: default;
-}
+/* #intro {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background: #fff;
+} */
