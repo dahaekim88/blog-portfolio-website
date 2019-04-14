@@ -5,6 +5,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import PostTag from "../components/tag"
 import {
+  Container,
   PostTitle,
   StyledHref,
   StyledButton,
@@ -20,7 +21,7 @@ export default ({ data }) => {
   return (
     <Layout>
       <SEO title={editedTitle} description={description} />
-      <div>
+      <Container>
         <Img src={gif} alt={title} style={{ margin: "2rem 0" }} />
 
         <div>
@@ -49,7 +50,7 @@ export default ({ data }) => {
         </div>
 
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
-      </div>
+      </Container>
     </Layout>
   )
 }

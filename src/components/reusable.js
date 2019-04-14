@@ -2,8 +2,14 @@ import styled from "styled-components"
 import { Link } from "gatsby"
 
 export const Container = styled.div`
+  width: 90%;
+  margin: 0 auto;
+  padding: 3em 0;
+`
+
+export const Center = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: ${({ direction }) => direction};
   align-items: center;
   justify-content: center;
 `
@@ -24,18 +30,7 @@ export const Col = styled.div`
     padding-left: 0.5rem;
   }
 
-  @media screen and (min-width: 981px) and (max-width: 1200px) {
-    flex: 100%;
-    &:first-child {
-      padding-right: 0;
-    }
-
-    &:last-child {
-      padding-left: 0;
-    }
-  }
-
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 980px) {
     flex: 100%;
     &:first-child {
       padding-right: 0;
@@ -50,15 +45,16 @@ export const Col = styled.div`
 export const StyledHref = styled.a`
   text-decoration: none;
   color: ${({ color }) => color};
+  font-size: 2rem;
   &:hover {
-    color: #f1c3d3;
+    color: #8bcbc8;
   }
 `
 
 export const StyledButton = styled.button`
-  background-color: transparent;
+  background-color: #fff;
   border-radius: 0.35em;
-  border: 3px solid #efefef;
+  border: 3px solid #dae9e4; // efefef
   color: #787878;
   cursor: pointer;
   display: inline-block;
@@ -76,7 +72,8 @@ export const StyledButton = styled.button`
   &:active,
   &:hover {
     color: #49bf9d;
-    border-color: 3px solid 49bf9d;
+    border: 3px solid #49bf9d;
+    background-color: #fff;
   }
 `
 
@@ -120,7 +117,7 @@ export const Figure = styled.div`
   position: relative;
   overflow: hidden;
   border-radius: 0.25em;
-  margin: 2.175rem 0;
+  margin: 2.175rem 1rem;
 
   @media screen and (min-width: 981px) and (max-width: 1200px) {
     margin: 1rem 0;
@@ -158,7 +155,7 @@ export const ProjectTitle = styled.div`
   left: 0;
   top: 35%;
   font-weight: 600;
-  font-size: 2.3rem;
+  font-size: 2rem;
   text-align: center;
   text-transform: uppercase;
   color: white;
@@ -167,10 +164,6 @@ export const ProjectTitle = styled.div`
 
   ${Figure}:hover & {
     opacity: 1;
-  }
-
-  @media screen and (min-width: 1201px) and (max-width: 1400px) {
-    font-size: 2rem;
   }
 
   @media screen and (max-width: 600px) {
@@ -213,6 +206,11 @@ export const LinkButton = styled(Link)`
   @media screen and (max-width: 600px) {
     width: 30%;
     padding: 0;
-    font-size: 0.7rem;
+    font-size: 1rem;
   }
+`
+
+export const Sns = styled.div`
+  display: inline-block;
+  margin: 0.45rem;
 `

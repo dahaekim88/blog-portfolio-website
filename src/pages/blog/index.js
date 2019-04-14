@@ -3,29 +3,31 @@ import { graphql } from "gatsby"
 
 import Layout from "../../components/layout"
 import Post from "../../components/post"
-import { PageTitle } from "../../components/reusable"
+import { Container, PageTitle } from "../../components/reusable"
 
 export default ({ data }) => {
   const posts = data.allMarkdownRemark.edges
 
   return (
     <Layout>
-      <PageTitle>Blog</PageTitle>
-      {posts.map(({ node }) => (
-        <div>
-          <Post
-            key={node.id}
-            title={node.frontmatter.title}
-            date={node.frontmatter.date}
-            description={node.frontmatter.description}
-            excerpt={node.excerpt}
-            to={node.fields.slug}
-            tags={node.frontmatter.tags}
-          />
-          <div>{node.fields.tagSlugs}</div>
-        </div>
-      ))}
-      {/* pagination */}
+      <Container>
+        <PageTitle>Blog</PageTitle>
+        {posts.map(({ node }) => (
+          <div>
+            <Post
+              key={node.id}
+              title={node.frontmatter.title}
+              date={node.frontmatter.date}
+              description={node.frontmatter.description}
+              excerpt={node.excerpt}
+              to={node.fields.slug}
+              tags={node.frontmatter.tags}
+            />
+            <div>{node.fields.tagSlugs}</div>
+          </div>
+        ))}
+        {/* pagination */}
+      </Container>
     </Layout>
   )
 }

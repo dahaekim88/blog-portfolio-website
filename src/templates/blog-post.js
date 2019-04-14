@@ -5,6 +5,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import PostTag from "../components/tag"
 import {
+  Container,
   PostTitle,
   PostDate,
   Navigation,
@@ -21,7 +22,7 @@ export default ({ data, pageContext }) => {
   return (
     <Layout>
       <SEO title={editedTitle} description={description} />
-      <div>
+      <Container>
         <PostTitle>{title}</PostTitle>
         <PostDate>{date}</PostDate>
         {` `}
@@ -50,7 +51,7 @@ export default ({ data, pageContext }) => {
             )}
           </div>
         </Navigation>
-      </div>
+      </Container>
     </Layout>
   )
 }
