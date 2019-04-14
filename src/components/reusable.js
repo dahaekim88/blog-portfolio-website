@@ -202,23 +202,11 @@ export const TagsContainer = styled.div`
 export const Tag = styled.span`
   background-color: #8bcbc8;
   color: #fff;
-  font-size: 1rem;
+  font-size: ${({ tagSize }) => tagSize};
   font-weight: 300;
   margin: 0 0.3rem;
   padding: 0.1rem 0.5rem;
   border-radius: 1rem;
-
-  @media screen and (min-width: 981px) and (max-width: 1600px) {
-    font-size: ${({ tagSize }) => tagSize};
-  }
-
-  @media screen and (min-width: 781px) and (max-width: 980px) {
-    font-size: 0.8rem;
-  }
-
-  @media screen and (min-width: 481px) and (max-width: 780px) {
-    font-size: 0.8rem;
-  }
 
   @media screen and (max-width: 480px) {
     font-size: 0.6rem;
