@@ -7,8 +7,12 @@ import NavMenu from "./navmenu"
 const NavBar = styled.div`
   display: flex;
   justify-content: space-between;
-  width: 90%;
   margin: 10px auto;
+  width: 70%;
+
+  @media screen and (max-width: 600px) {
+    width: 90%;
+  }
 `
 
 const Logo = styled(Link)`

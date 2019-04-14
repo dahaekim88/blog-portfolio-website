@@ -2,9 +2,13 @@ import styled from "styled-components"
 import { Link } from "gatsby"
 
 export const Container = styled.div`
-  width: 90%;
+  width: 70%;
   margin: 0 auto;
   padding: 3em 0;
+
+  @media screen and (max-width: 600px) {
+    width: 90%;
+  }
 `
 
 export const Center = styled.div`
