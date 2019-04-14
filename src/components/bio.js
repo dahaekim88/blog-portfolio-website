@@ -10,7 +10,7 @@ import {
   IoMdMail,
   IoMdCopy,
 } from "react-icons/io"
-import profile from "../images/icon.png"
+import profile from "../images/profile.png"
 
 const Paragraph = styled.p`
   text-align: center;
@@ -29,7 +29,11 @@ export default () => (
           <Link to="/" style={{ textShadow: `none`, backgroundImage: `none` }}>
             <img src={profile} alt="dada" style={{ borderRadius: "50%" }} />
           </Link>
-          <Paragraph>Former Fashion Buyer, Now Web Developer</Paragraph>
+          <Paragraph>
+            Former Fashion Buyer,
+            <br />
+            Now Software Engineer
+          </Paragraph>
           <div>
             <Sns>
               <StyledHref
