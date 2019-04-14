@@ -2,22 +2,31 @@ import React from "react"
 import { graphql } from "gatsby"
 
 import Layout from "../../components/layout"
+import Header from "../../components/header"
 import Project from "../../components/project"
-import { Container, PageTitle } from "../../components/reusable"
+import { Container, PageHeading } from "../../components/reusable"
 
 export default ({ data }) => {
   const projects = data.allMarkdownRemark.edges
 
   return (
     <Layout>
+      <PageHeading>
+        <Header
+          title="Projects"
+          subtitle="앞으로 가득가득 채워나갈 작업 공간"
+        />
+      </PageHeading>
       <Container>
-        <PageTitle>Projects</PageTitle>
         {projects.map(({ node }) => (
           <Project
             key={node.id}
             title={node.frontmatter.title}
             image={node.frontmatter.image}
+            tags={node.frontmatter.tags}
             to={node.fields.slug}
+            titleSize="2rem"
+            tagSize="1rem"
           />
         ))}
       </Container>

@@ -2,16 +2,19 @@ import React from "react"
 import { graphql } from "gatsby"
 
 import Layout from "../../components/layout"
+import Header from "../../components/header"
 import Post from "../../components/post"
-import { Container, PageTitle } from "../../components/reusable"
+import { Container, PageHeading } from "../../components/reusable"
 
 export default ({ data }) => {
   const posts = data.allMarkdownRemark.edges
 
   return (
     <Layout>
+      <PageHeading>
+        <Header title="Blog" subtitle="끄적끄적, 혼자만의 기술 노트" />
+      </PageHeading>
       <Container>
-        <PageTitle>Blog</PageTitle>
         {posts.map(({ node }) => (
           <div>
             <Post
