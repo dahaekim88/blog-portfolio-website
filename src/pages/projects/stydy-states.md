@@ -1,8 +1,7 @@
 ---
 title: "Study States"
 date: 2019-04-10T22:00:00.000Z
-tags:
-  ["paid-project", "react", "gatsbyjs", "netlify-cms", "nodejs", "full-stack"]
+tags: ["paid-project", "react", "gatsbyjs", "netlify-cms"]
 description: "A web application for online study group platform, renewed by GatsbyJS"
 image: /assets/studystates.png
 gif: /assets/studystates.gif
