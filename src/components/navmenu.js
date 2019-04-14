@@ -2,49 +2,43 @@ import React, { useState } from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
 
-const MenuLink = styled(Link)`
-  color: #f1c3d3;
-
-  &:hover,
-  &:active {
-    text-decoration: overline;
-  }
+const Container = styled.div`
+  display: inline-block;
+  padding: 0.5rem;
 
   .active {
     text-decoration: overline;
   }
 `
-const Menu = styled.div`
-  display: inline-block;
-  padding: 0.5rem 0.5rem 0.5rem ${props => props.padding};
+
+const NavLink = styled(Link)`
+  color: #787878;
+  font-size: 1.2rem;
+  font-family: "Work Sans", sans-serif;
+
+  &:hover,
+  &:active {
+    color: #ecc7c0;
+    text-decoration: overline;
+  }
+
+  @media screen and (max-width: 480px) {
+    font-size: 0.8rem;
+  }
 `
 
 export default ({ to, padding, children }) => {
   const [linkStyle, setLinkStyle] = useState("")
-  // let clicked = null
 
   const handleClick = () => {
     setLinkStyle("active")
-    // console.log("clicked: ", clicked)
-    // if (clicked.classList) {
-    //   clicked.classList.add("active")
-    // } else {
-    //   clicked.class += " active"
-    // }
   }
 
   return (
-    <Menu padding={padding}>
-      {/* <span
-        ref={element => {
-          clicked = element
-        }}
-        onClick={handleClick}
-      > */}
-      <MenuLink to={to} className={linkStyle} onClick={handleClick}>
+    <Container padding={padding}>
+      <NavLink to={to} className={linkStyle} onClick={handleClick}>
         {children}
-      </MenuLink>
-      {/* </span> */}
-    </Menu>
+      </NavLink>
+    </Container>
   )
 }
