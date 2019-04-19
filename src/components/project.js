@@ -17,8 +17,10 @@ export default ({ image, title, tags, to, titleSize, tagSize }) => (
     <Overlay />
     <ProjectTitle titleSize={titleSize}>{title}</ProjectTitle>
     <TagsContainer>
-      {tags.map(tag => (
-        <Tag tagSize={tagSize}>{tag}</Tag>
+      {tags.map((tag, index) => (
+        <Tag tagSize={tagSize} key={index}>
+          {tag}
+        </Tag>
       ))}
     </TagsContainer>
     <LinkContainer>

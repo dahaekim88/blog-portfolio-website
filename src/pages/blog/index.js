@@ -26,7 +26,6 @@ export default ({ data }) => {
               to={node.fields.slug}
               tags={node.frontmatter.tags}
             />
-            <div>{node.fields.tagSlugs}</div>
           </div>
         ))}
         {/* pagination */}

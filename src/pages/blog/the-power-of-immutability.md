@@ -1,7 +1,7 @@
 ---
 title: "The Power of Immutable Data (feat. ImmutableJS)"
 date: 2019-02-01T22:34:00.000Z
-tags: ["facebook", "React", "ImmutableJS", "nested_data", "bug_free"]
+tags: ["facebook", "react", "immutablejs", "nested-data", "bug-free"]
 category: blog
 open: true
 ---
