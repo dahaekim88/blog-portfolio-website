@@ -5,6 +5,7 @@ import { FaAngleUp } from "react-icons/fa"
 
 import Navbar from "./navbar"
 import SEO from "./seo"
+import Footer from "./footer"
 
 const Main = styled.div`
   margin: 0 auto;
@@ -85,6 +86,7 @@ export default ({ children }) => {
               <FaAngleUp className="icon" />
               <div>TOP</div>
             </BackToTop>
+            <Footer />
           </div>
         )
       }}
