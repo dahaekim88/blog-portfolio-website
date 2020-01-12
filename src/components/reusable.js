@@ -81,6 +81,25 @@ export const StyledButton = styled.button`
   }
 `
 
+export const DisabledStyledButton = styled.button`
+  background-color: #fff;
+  border-radius: 0.35em;
+  border: 3px solid #dae9e4; // efefef
+  color: #787878;
+  pointer-events: none;
+  display: inline-block;
+  font-size: 12pt;
+  font-weight: 400;
+  height: calc(2.5em + 6px);
+  line-height: 2.5em;
+  min-width: 10em;
+  margin: 1em 0;
+  padding: 0 1.5em;
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+`
+
 export const PageHeading = styled.div`
   background-color: #f7f7f7;
   padding: 3rem 0;

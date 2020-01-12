@@ -9,6 +9,7 @@ import {
   PostTitle,
   StyledHref,
   StyledButton,
+  DisabledStyledButton,
   Img,
 } from "../components/reusable"
 
@@ -30,9 +31,19 @@ export default ({ data }) => {
         </div>
 
         <div style={{ marginBottom: "2rem" }}>
-          <StyledHref href={demo} target="_blank" rel="noopener noreferrer">
-            <StyledButton>Demo</StyledButton>
-          </StyledHref>
+          {demo === "private" ? (
+            <StyledHref
+              class="disable"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <DisabledStyledButton>Private Demo</DisabledStyledButton>
+            </StyledHref>
+          ) : (
+            <StyledHref href={demo} target="_blank" rel="noopener noreferrer">
+              <StyledButton>Demo</StyledButton>
+            </StyledHref>
+          )}
           {` `}
           {source === "private" ? (
             <StyledHref
@@ -40,7 +51,7 @@ export default ({ data }) => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <StyledButton>Private Source</StyledButton>
+              <DisabledStyledButton>Private Source</DisabledStyledButton>
             </StyledHref>
           ) : (
             <StyledHref href={source} target="_blank" rel="noopener noreferrer">
