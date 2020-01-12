@@ -1,7 +1,7 @@
 ---
-title: "Study States"
-date: 2019-04-10T22:00:00.000Z
-tags: ["paid-project", "react", "gatsbyjs", "netlify-cms"]
+title: "Study States Website"
+date: 2019-04-10T22:00:00
+tags: ["website", "react", "gatsbyjs", "netlify", "cms"]
 description: "A web application for online study group platform, renewed by GatsbyJS"
 image: /assets/studystates.png
 gif: /assets/studystates.gif
@@ -13,7 +13,7 @@ category: projects
 ### 프로젝트
 
 - 이름: Study States
-- 기간: 19.02월 - 진행 중 (5월 중 완료 예정)
+- 기간: 19.02월 - 19.04월 (10주)
 - 인원: 2명
 - 소개:
   - Code States에서 운영하는 온라인 그룹 스터디 플랫폼
@@ -39,7 +39,3 @@ Full-stack
 - Passport.js 및 JWT를 통한 User Authentication 추가, 마이페이지 구현
 - 아임포트 연동 결제서비스 구현
 - NetlifyCMS 연동을 통한 admin 패널 추가
-
-<br />
-
-**\*\* 현재 링크가 걸려있는 사이트는 React로만 개발된 기존 코드로, 이에 대한 유지보수 작업 또한 함께 진행하였습니다**

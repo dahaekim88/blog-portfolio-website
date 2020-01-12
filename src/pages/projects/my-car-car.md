@@ -5,15 +5,15 @@ tags: ["team-project", "react", "nodejs", "full-stack"]
 description: "A car rental web application, collaborating with a startup company 'Lift29'"
 image: /assets/mycarcar.jpg
 gif: /assets/mycarcar-rental.gif
-demo: http://13.125.130.78
-source: https://github.com/codestates/client-lift29-mycarcar-web
+demo: http://54.180.96.51:5000/
+source: https://github.com/dahaekim88/mycarcar-client
 category: projects
 ---
 
 ### 프로젝트
 
 - 이름: MyCarCar
-- 기간: 3주
+- 기간: 19.01월 (3주)
 - 인원: 2명
 - 소개:
   - Lift29 기업 협업 프로젝트, 장기렌탈 웹어플리케이션
