@@ -3,7 +3,7 @@ module.exports = {
     title: `DAHAE KIM`,
     author: `dahae`,
     description: `Dahae's Personal Website for Blog & Portfolio`,
-    siteUrl: `https://dahae-blog.netlify.com/`,
+    siteUrl: `https://dahae.kim/`,
     social: {
       github: `dahaekim88`,
       linkedin: `dahae-kim-ba590b31`,
@@ -49,7 +49,7 @@ module.exports = {
             },
           },
           {
-            resolve: `gatsby-remark-prismjs`,
+            resolve: `gatsby-remark-vscode`,
             options: {
               // Class prefix for <pre> tags containing syntax highlighting;
               // defaults to 'language-' (eg <pre class="language-js">).
