@@ -1,8 +1,8 @@
 ---
-title: "Study States Website"
+title: Study States Website
 date: 2019-04-10T22:00:00
+description: A web application for online study group platform, renewed by GatsbyJS
 tags: ["website", "react", "gatsbyjs", "netlify", "cms"]
-description: "A web application for online study group platform, renewed by GatsbyJS"
 image: /assets/studystates.png
 gif: /assets/studystates.gif
 demo: http://studystates.net
@@ -12,7 +12,7 @@ category: projects
 
 ### 프로젝트
 
-- 이름: Study States
+- 이름: Study States Website Renewal
 - 기간: 19.02월 - 19.04월 (10주)
 - 인원: 2명
 - 소개:
@@ -26,10 +26,9 @@ Full-stack
 ### 기술 스택
 
 - Client: GatsbyJS, React, Styled-Components, Ant Design, Netlify CMS
-- Server: NodJS(+Express), REST API, Passport.js, JWT, Typescript
+- Server: Node.js(+Express), REST API, Passport.js, JWT, Typescript
 - DB: MySQL, TypeORM
 - Deploy: Client - Netlify, Server - AWS EC2
-- Version Control: Github
 - Business Tool: Notion, Asana, Slack, Figma
 
 ### 작업 내용
@@ -39,3 +38,14 @@ Full-stack
 - Passport.js 및 JWT를 통한 User Authentication 추가, 마이페이지 구현
 - 아임포트 연동 결제서비스 구현
 - NetlifyCMS 연동을 통한 admin 패널 추가
+
+<br />
+
+---
+
+<br />
+
+A web application for online study group platform, rebuilt with GatsbyJS, worked as full-stack  
+- Devised API server with Node.js & Typescript and designed database with MySQL 
+- Implemented user authentication using Passport.js and JWT  
+- Integrated payment service with Iamport and admin panel with Netlify CMS

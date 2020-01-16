@@ -1,8 +1,8 @@
 ---
-title: "Mycarcar"
+title: Mycarcar
 date: 2019-01-20T15:00:00.000Z
+description: A car rental web application, collaborating with a startup company 'Lift29'
 tags: ["team-project", "react", "nodejs", "full-stack"]
-description: "A car rental web application, collaborating with a startup company 'Lift29'"
 image: /assets/mycarcar.jpg
 gif: /assets/mycarcar-rental.gif
 demo: http://54.180.96.51:5000/
@@ -64,6 +64,5 @@ Full-stack (팀원과 client-server 격주로 진행)
 
 <br />
 
-A car rental web application that allows consumers to get an estimate for long-term car rentals without brokerage, collaborating with a startup company 'Lift29'
-
+A car rental web application that allows consumers to get an estimate for long-term car rentals without brokerage, collaborating with a startup company 'Lift29'  
 - Worked as full-stack, Devised React for client-side, CSS & Bootstrap for design, Node JS & Express for sever-side, MySQL for database, AWS for deployment and Typescript for overall

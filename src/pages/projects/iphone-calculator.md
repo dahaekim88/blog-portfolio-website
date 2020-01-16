@@ -1,7 +1,7 @@
 ---
-title: "iPhone Calculator"
+title: iPhone Calculator
 date: 2018-10-16T15:00:00.000Z
-description: "iPhone Calculator that can be operated by both keyboard and mouse."
+description: iPhone Calculator that can be operated by both keyboard and mouse
 tags: ["individual-project", "vanilla javascript"]
 image: /assets/calculator.jpg
 gif: /assets/calculator.gif
@@ -38,8 +38,6 @@ category: projects
 
 <br />
 
-iPhone themed calculator that can be operated by both keyboard and mouse.
-
-Still working on calculation & display of large numbers and thousands seperators.
-
+iPhone themed calculator that can be operated by both keyboard and mouse  
+(Still working on calculation & display of large numbers and thousands seperators)  
 - Devised Vanilla Javascript to achieve comprehensive operation logic

@@ -1,7 +1,7 @@
 ---
 title: "Yujin Robot B2B Website"
 date: 2019-11-02T21:30:00.000Z
-tags: ["b2b", "website", "wordpress", "cms", "multilingual"]
+tags: ["website", "wordpress", "cms"]
 description: ""
 image: /assets/yujinrobot.png
 gif: /assets/yujinrobot.gif
@@ -21,19 +21,15 @@ category: projects
 
 - Wordpress
 - Amazon Web Service: Server hosting & DNS Configuration
+- Business Tool: Basecamp, MS Teams
 
 ### 작업 내용
 
-- 반응형 웹사이트
-- 다국어 지원
-- CMS 기능 적용 
-- Google Analytics
+- 반응형, 크로스 브라우징, 다국어 지원
+- CMS 커스터마이징 및 Google Analytics 적용
 
-<br />
+--- 
 
----
-
-<br />
-
-A corporate website of Yujin Robot, Korean leading company in the Robot industry.  
-Developed responsive website, supported multilingual, integrated CMS & Google Analytics.
+A corporate website of Yujin Robot, Korean leading company in the Robot industry  
+- Delivered responsive, cross-browser compatible and accessibility compliant website  
+- Supported multilingual, integrated CMS & Google Analytics
