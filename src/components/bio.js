@@ -80,7 +80,7 @@ export default () => (
             </Sns>
             <Sns>
               <StyledHref
-                href={`https://docs.google.com/document/d/18XZhwGPPwZs2Lqt8khXxLTvMKjQcpWzo_t8CmMD-noI/edit?usp=sharing`}
+                href={`https://docs.google.com/document/d/1IfJhLs5G67eJf0nh8JePffLAungSJXtZHdZmcM88B-4/edit?usp=sharing`}
                 rel="noopener noreferrer"
                 target="_blank"
                 color="#ecc7c0"
