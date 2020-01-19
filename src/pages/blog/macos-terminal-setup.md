@@ -74,7 +74,7 @@ iTerm의 가장 매력적인 요소 중 하나인 컬러 테마 커스터마이�
 
 ![iterm-color-preset](/assets/iterm-color-preset.png)
 
-하지만 내가 선택한 테마는 이 리스트에는 없는 외부 테마로, CSS-Tricks의 writer로도 활동하는 유명한 Sarah Drasner의 VS Code 테마인 `Night Owl`을 터미널에서도 사용 가능하다. (물론, VS Code에서도 동일하게 사용 중이다.) - https://github.com/jsit/night-owl-iterm2-theme
+하지만 내가 선택한 테마는 이 리스트에는 없는 외부 테마로, CSS-Tricks의 writer로도 활동하는 유명한 Sarah Drasner의 VS Code 테마인 `Night Owl`을 터미널에서도 사용 가능하다. (물론, VS Code에서도 동일하게 사용 중이다. - 참고: [VS Code 셋업](/blog/vscode-setup)) - https://github.com/jsit/night-owl-iterm2-theme
 
 ### - Fonts
 
