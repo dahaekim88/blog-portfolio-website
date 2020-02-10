@@ -16,7 +16,7 @@ open: true
 
 <br />
 
-먼저 리액트 프로젝트를 하는데 웹팩과 바벨이 왜 필요한가부터 다시 한 번 짚고 넘어가자면,  
+> 먼저 리액트 프로젝트를 하는데 웹팩과 바벨이 왜 필요한가부터 다시 한 번 짚고 넘어가자면,
 
 리액트 컴포넌트는 주로 ES6 문법으로 작성되는데(class, import, export...), 오래된 브라우저에서는 이러한 최신 문법을 지원하지 않기 때문에 ES6를 ES5로 바꿔주는 작업이 필요하다. 또한 리액트에서 사용하는 JSX 문법을 브라우저에서 이해할 수 있도록 바닐라 자바스크립트로 전환해주어야 하는데, 바로 이러한 transpiling 작업을 해주는 것이 바로 Babel이다.
 
@@ -26,34 +26,38 @@ open: true
 
 <br />
 
-그럼 이러한 역할들을 하는 웹팩과 바벨을 리액트에서 사용하기 위해서는 어떻게 해야할까?  
+그럼 이러한 역할들을 하는 웹팩과 바벨을 리액트에서 사용하기 위해서는 어떻게 해야할까?
 
-### Webpack
+<br />
+
+## Webpack
+
+---
 
 우선 웹팩과 관련된 기본 패키지들을 npm으로 설치한다.
 
 - `webpack`
-- `webpack-cli` : 웹팩을 커맨드 라인으로 사용할 수 있게 해준다 
+- `webpack-cli` : 웹팩을 커맨드 라인으로 사용할 수 있게 해준다
 - `webpack-dev-server` : live reloading을 제공하는 데브 서버를 사용할 수 있게 해준다
 
 기본적으로 이렇게 설치만 하면 설정파일 없이도 `webpack` 커맨드 하나로 빌드가 가능하다.  
 entry와 output의 디폴트가 정해져 있어서, 별다른 커스텀 설정이 없다면 항상 `./src/index.js` 파일을 찾아 `./dist/main.js`로 빌드 결과물이 산출된다. 굳이 설정파일로 작성해보자면, 다양한 옵션들은 차치하고 간단하게 다음과 같이 된다.
 
-#### webpack.config.js
+> ### webpack.config.js
 
 ```js
-const path = require('path');
+const path = require("path")
 
 module.exports = {
-  entry: './src/index.js',
+  entry: "./src/index.js",
   output: {
-    path: path.join(__dirname, 'dist'),
-    publicPath: '/', // 브라우저가 참고할 번들링 결과 파일의 URL 주소
-    filename: 'main.js'
+    path: path.join(__dirname, "dist"),
+    publicPath: "/", // 브라우저가 참고할 번들링 결과 파일의 URL 주소
+    filename: "main.js",
   },
 }
 ```
-  
+
 다만 webpack4 부터는 mode를 설정할 수 있는데, 이 설정 값에 따라 built-in 최적화 여부가 결정된다.  
 이는 설정 파일에 작성할 수도 있지만, `webpack` 커맨드 실행시 `--mode` 옵션을 줄 수도 있다.  
 다음과 같은 두 가지 옵션이 있는데, 각각 빌드를 한 다음 `./dist/main.js` 파일을 확인해보면 production 모드가 minified 된 것을 확인할 수 있다. 디폴트 값은 production으로 설정되어 있다.
@@ -65,7 +69,9 @@ $ webpack --mode production
 
 <br />
 
-### Babel
+## Babel
+
+---
 
 바벨과 관련된 기본 패키지는 다음과 같다.
 
@@ -74,33 +80,32 @@ $ webpack --mode production
 - `@babel/preset-react` : 리액트를 사용하는 경우 필요한 패키지로 JSX 문법을 Vanilla JS로 변환해준다
 - `babel-loader` : 웹팩에서 사용할 모듈로, 웹팩에게 바벨을 어떻게 실행시킬지를 알려준다
 
-이렇게 기본적으로 설치한 바벨을 가지고 먼저 바벨 설정파일 `.babelrc`를 작성한다.  
+이렇게 기본적으로 설치한 바벨을 가지고 먼저 바벨 설정파일 `.babelrc`를 작성한다.
 
-#### .babelrc
+> ### .babelrc
 
 ```json
 {
-  "presets": [
-    "@babel/preset-env", 
-    "@babel/preset-react" 
-  ]
+  "presets": ["@babel/preset-env", "@babel/preset-react"]
 }
 ```
 
 그리고 앞서 설명한 웹팩 모듈인 `babel-loader`는 웹팩 설정파일에 다음과 같이 작성해준다.
 
-#### webpack.config.js
+> ### webpack.config.js
 
 ```js
 module.exports = {
-  module: { // 번들링 과정에 개입하여 특정 동작 처리해주는 Loader
-    rules: [ // Loader 규칙 작성
+  module: {
+    // 번들링 과정에 개입하여 특정 동작 처리해주는 Loader
+    rules: [
+      // Loader 규칙 작성
       {
         test: /\.(js|jsx)$/, // 플러그인을 적용할 대상 파일 설정
         exclude: /node_modules/, // node_modules 제외
-        use: 'babel-loader' // 사용할 플러그인
+        use: "babel-loader", // 사용할 플러그인
       },
-    ]
+    ],
   },
 }
 ```
@@ -110,7 +115,9 @@ module.exports = {
 
 <br />
 
-### Webpack Plugins & Loaders
+## Webpack Plugins & Loaders
+
+---
 
 - `html-webpack-plugin` : html 파일의 script 태그 안에 컴파일된 bundle 파일 심어준다
 
@@ -119,7 +126,7 @@ module.exports = {
 - `sass-loader` : 웹팩이 sass 파일을 css로 컴파일 하도록 도와준다
 - `node-sass` : sass-loader에 의존성이 있는 패키지
 
-#### webpack.config.js
+> ### webpack.config.js
 
 ```js
 const HTMLWebPackPlugin = require("html-webpack-plugin");
@@ -130,7 +137,7 @@ module.exports = {
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        use: 'babel-loader' 
+        use: 'babel-loader'
       },
       {
         test: /\.scss$/,
@@ -138,7 +145,7 @@ module.exports = {
           'style-loader',
           'css-loader',
           'sass-loader']
-        ] 
+        ]
       },
     ]
   },
@@ -157,32 +164,35 @@ devtool은 이를 위한 옵션인데, 알고보니 소스맵 데브툴도 유�
 
 <br />
 
-### Webpack Script
+## Webpack Script
+
+---
 
 마지막으로 `package.json` 파일에 스크립트를 추가하는데, 앞서 말한 mode 옵션을 사용하여 작성한다.  
-개발 모드에서는 제일 처음에 설치했던 `webpack-dev-server`를 이용하면 되는데, 이 또한 기본적으로 실행시킬 path가 디폴트값으로 `./dist` 폴더가 설정되어 있으며, 굳이 설정파일에서 `hot: true` 혹은 `webpack.HotModuleReplacementPlugin` 등을 별도로 설정할 필요가 없다.  
+개발 모드에서는 제일 처음에 설치했던 `webpack-dev-server`를 이용하면 되는데, 이 또한 기본적으로 실행시킬 path가 디폴트값으로 `./dist` 폴더가 설정되어 있으며, 굳이 설정파일에서 `hot: true` 혹은 `webpack.HotModuleReplacementPlugin` 등을 별도로 설정할 필요가 없다.
 
 `--open` 옵션으로 데브 서버 시작 후 자동으로 브라우저를 열도록 설정하고, `--hot` 옵션으로는 HMR(Hot Module Replacement)을 활성화 해준다.
 
-#### package.json
+> ### package.json
 
 ```json
 {
   "scripts": {
     "start": "webpack-dev-server --open --hot --mode development",
     "build": "webpack --mode production"
-  },
+  }
 }
 ```
 
 <br />
 
-첫 단계이니 만큼 굉장히 기초적인 설정을 해보았는데, [웹팩 공식문서](https://webpack.js.org/concepts/)를 보니 앞으로도 공부를 해야할 게 산더미 같다. (<del>이래서 다들 Zero Config를 찾나보다...</del>) 
+첫 단계이니 만큼 굉장히 기초적인 설정을 해보았는데, [웹팩 공식문서](https://webpack.js.org/concepts/)를 보니 앞으로도 공부를 해야할 게 산더미 같다. (<del>이래서 다들 Zero Config를 찾나보다...</del>)
 
 또한 이렇게 번들러를 사용했을 때 고려를 해야하는 점이 있는데, 여러 자바스크립트 파일들이 이 웹팩과 같은 모듈 번들러를 통해 하나의 파일로 묶여있기 때문에, 앱이 커질수록 초기 로딩 속도가 굉장히 길어질 수 있다. 따라서 이 문제를 해결하기 위한 방법으로는 바로 코드를 나누는 (Code Splitting) 것인데, 이는 런타임에 여러 번들을 동적으로 만들고 불러와 Lazy Loading을 함으로써 초기 로딩 속도를 개선시킬 수 있다. 공부해야 할 거 하나 더 추가!
 
 <br />
 
-[Reference]  
+#### [Reference]
+
 https://www.robinwieruch.de/minimal-react-webpack-babel-setup
 https://cresumerjang.github.io/2019/02/09/webpack-config/

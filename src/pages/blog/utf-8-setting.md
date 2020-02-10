@@ -6,6 +6,8 @@ category: blog
 open: true
 ---
 
+<br />
+
 ### ASCII vs. UNICODE
 
 기본적으로 문자나 기호를 컴퓨터에 저장하거나, 통신 목적으로 사용할 경우에는 컴퓨터가 알아들을 수 있게 부호로 바꾸어 주어야 하는데, 이를 `인코딩(encoding)` 이라고 한다.
@@ -77,5 +79,6 @@ CREATE TABLE car_brand (
 
 <br />
 
-[Reference]
+#### [Reference]
+
 https://whatisthenext.tistory.com/103

@@ -6,6 +6,8 @@ category: blog
 open: true
 ---
 
+<br />
+
 ### Data Migration
 
 - **NodeJS 활용하여 데이터 옮기기**
@@ -120,18 +122,7 @@ WHERE car_brand_id = (
 
 <br />
 
-- **서브쿼리로 join 하기**  
-  For each product category, we want to know at what average unit
-  price they were sold and what the average unit price we would
-  like to sell for.
-
-Subquery is used in FROM clause to get table x which returns the
-average unit price sold for each product category.
-
-Table y in the join clause returns the average unit price
-we'd like to sell for each product category.
-
-Then table x is joined with table y for each category.
+- **서브쿼리로 join 하기**
 
 ```sql
 SELECT DISTINCT c1.car_option, c1.car_option_price
