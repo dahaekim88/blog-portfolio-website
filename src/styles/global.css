@@ -66,3 +66,11 @@ textarea:focus {
   height: 100vh;
   background: #fff;
 } */
+
+:not(pre) > code {
+  background: #f5f2f0;
+  padding: .2em .5em;
+  border-radius: .3em;
+  white-space: normal;
+  font-weight: bold;
+}
