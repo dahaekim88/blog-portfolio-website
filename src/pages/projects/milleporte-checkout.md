@@ -10,6 +10,10 @@ source: private
 category: projects
 ---
 
+> 현재 해당 작업 내용은 Staging server에 반영된 상태이며, 백엔드 추가 작업으로 인해 production 반영은 추후 진행될 예정입니다. 참고로 현재 데모 링크는 해당 작업 내용이 반영되지 않은 Production site 입니다.
+
+<br />
+
 ### 프로젝트
 
 - 이름: Milleporte E-Commerce Site
@@ -33,8 +37,6 @@ Front-end
 - 양식 유효성 검사(form validation) 처리 및 자동 완성 기능 구현
 - 크레딧카드 BlueGate 인증 및 PayPal 콜백 처리를 통한 결제 플로우 구현
 - 인터랙티브한 one-page checkout을 통한 UX 개선
-
-**\*\* 현재 해당 작업 내용은 staging server에 반영된 상태이며, 백엔드 추가 작업으로 인해 production 반영은 추후 진행될 예정입니다. 참고로 현재 데모 링크는 해당 작업 내용이 반영되지 않은 production site 입니다.**
 
 <br />
 
