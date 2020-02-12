@@ -1,36 +1,55 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import { graphql } from "gatsby"
 
-import Layout from "../../components/layout"
-import Header from "../../components/header"
-import Post from "../../components/post"
-import { Container, PageHeading } from "../../components/reusable"
+import {
+  Loader,
+  Layout,
+  Header,
+  Post,
+} from "../components"
+import {
+  Container,
+  PageHeading,
+} from "../../components/reusable"
 
 export default ({ data }) => {
   const posts = data.allMarkdownRemark.edges
+  
+  const [isLoading, setIsLoading] = useState(true)
+
+  useEffect(() => {
+    setIsLoading(false)
+  })
 
   return (
-    <Layout>
-      <PageHeading>
-        <Header title="Blog" subtitle="끄적끄적, 혼자만의 기술 노트" />
-      </PageHeading>
-      <Container>
-        {posts.map(({ node }) => (
-          <div>
-            <Post
-              key={node.id}
-              title={node.frontmatter.title}
-              date={node.frontmatter.date}
-              description={node.frontmatter.description}
-              excerpt={node.excerpt}
-              to={node.fields.slug}
-              tags={node.frontmatter.tags}
-            />
-          </div>
-        ))}
-        {/* pagination */}
-      </Container>
-    </Layout>
+    <>
+      {isLoading
+        ?
+        <Loader />
+        :
+        <Layout>
+          <PageHeading>
+            <Header title="Blog" subtitle="끄적끄적, 혼자만의 기술 노트" />
+          </PageHeading>
+          <Container>
+            {posts.map(({ node }) => (
+              <div>
+                <Post
+                  key={node.id}
+                  title={node.frontmatter.title}
+                  date={node.frontmatter.date}
+                  description={node.frontmatter.description}
+                  excerpt={node.excerpt}
+                  to={node.fields.slug}
+                  tags={node.frontmatter.tags}
+                />
+              </div>
+            ))}
+            {/* pagination */}
+          </Container>
+        </Layout>
+      }
+    </>
   )
 }
 

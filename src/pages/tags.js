@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import PropTypes from "prop-types"
 
 // Utilities
@@ -7,7 +7,10 @@ import kebabCase from "lodash/kebabCase"
 // Components
 import { Helmet } from "react-helmet"
 import { Link, graphql } from "gatsby"
-import Layout from "../components/layout"
+import {
+  Loader,
+  Layout,
+} from "../components"
 import { Container } from "../components/reusable"
 
 const TagsPage = ({
@@ -17,25 +20,40 @@ const TagsPage = ({
       siteMetadata: { title },
     },
   },
-}) => (
-  <Layout>
-    <Helmet title={title} />
-    <Container>
-      <div>
-        <h1>Tags</h1>
-        <ul>
-          {group.map(tag => (
-            <li key={tag.fieldValue}>
-              <Link to={`/tags/${kebabCase(tag.fieldValue)}/`}>
-                {tag.fieldValue} ({tag.totalCount})
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </div>
-    </Container>
-  </Layout>
-)
+}) => {
+  const [isLoading, setIsLoading] = useState(true)
+
+  useEffect(() => {
+    setIsLoading(false)
+  })
+    
+  return (
+    <>
+      {isLoading
+        ?
+        <Loader />
+        :
+        <Layout>
+          <Helmet title={title} />
+          <Container>
+            <div>
+              <h1>Tags</h1>
+              <ul>
+                {group.map(tag => (
+                  <li key={tag.fieldValue}>
+                    <Link to={`/tags/${kebabCase(tag.fieldValue)}/`}>
+                      {tag.fieldValue} ({tag.totalCount})
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </Container>
+        </Layout>
+      }
+    </>
+  )
+}
 
 TagsPage.propTypes = {
   data: PropTypes.shape({

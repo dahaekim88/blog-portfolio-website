@@ -1,8 +1,8 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import PropTypes from "prop-types"
 
 import { Link, graphql } from "gatsby"
-import Layout from "../components/layout"
+import { Layout } from "../components"
 import { Container } from "../components/reusable"
 
 const Tags = ({ pageContext, data }) => {
@@ -11,25 +11,38 @@ const Tags = ({ pageContext, data }) => {
   const tagHeader = `Post${
     totalCount === 1 ? "" : "s"
   } about "${tag}" (${totalCount})`
+  
+  const [isLoading, setIsLoading] = useState(true)
+
+  useEffect(() => {
+    setIsLoading(false)
+  })
 
   return (
-    <Layout>
-      <Container>
-        <h1>{tagHeader}</h1>
-        <ul>
-          {edges.map(({ node }) => {
-            const { slug } = node.fields
-            const { title } = node.frontmatter
-            return (
-              <li key={slug}>
-                <Link to={slug}>{title}</Link>
-              </li>
-            )
-          })}
-        </ul>
-        <Link to="/tags">>> All tags</Link>
-      </Container>
-    </Layout>
+    <>
+      {isLoading
+        ?
+        <Loader />
+        :
+        <Layout>
+          <Container>
+            <h1>{tagHeader}</h1>
+            <ul>
+              {edges.map(({ node }) => {
+                const { slug } = node.fields
+                const { title } = node.frontmatter
+                return (
+                  <li key={slug}>
+                    <Link to={slug}>{title}</Link>
+                  </li>
+                )
+              })}
+            </ul>
+            <Link to="/tags">>> All tags</Link>
+          </Container>
+        </Layout>
+      }
+    </>
   )
 }
 
