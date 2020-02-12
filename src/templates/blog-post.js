@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from "react"
+import React from "react"
 import { Link, graphql } from "gatsby"
 
 import {
-  Loader,
   Layout,
   SEO,
   Tag
@@ -22,53 +21,40 @@ export default ({ data, pageContext }) => {
   const { previous, next } = pageContext
   const editedTitle = `${title} - ${siteTitle}`
 
-  const [isLoading, setIsLoading] = useState(true)
-
-  useEffect(() => {
-    setIsLoading(false)
-  })
-
   return (
-    <>
-      {isLoading
-        ?
-        <Loader />
-        :
-        <Layout>
-          <SEO title={editedTitle} description={description} />
-          <Container>
-            <PostTitle>{title}</PostTitle>
-            <PostDate>{date}</PostDate>
-            {` `}
-            <Tag tags={tags} />
+    <Layout>
+      <SEO title={editedTitle} description={description} />
+      <Container>
+        <PostTitle>{title}</PostTitle>
+        <PostDate>{date}</PostDate>
+        {` `}
+        <Tag tags={tags} />
 
-            <div dangerouslySetInnerHTML={{ __html: post.html }} />
+        <div dangerouslySetInnerHTML={{ __html: post.html }} />
 
-            <Navigation>
-              <div>
-                {previous && (
-                  <Link to={previous.fields.slug} rel="prev">
-                    <StyledButton>
-                      &laquo; previous
-                      {/* ← previous post: {previous.frontmatter.title}  */}
-                    </StyledButton>
-                  </Link>
-                )}
-              </div>
-              <div>
-                {next && (
-                  <Link to={next.fields.slug} rel="next">
-                    <StyledButton>
-                      next &raquo;{/* next post: {next.frontmatter.title} → */}
-                    </StyledButton>
-                  </Link>
-                )}
-              </div>
-            </Navigation>
-          </Container>
-        </Layout>
-      }
-    </>
+        <Navigation>
+          <div>
+            {previous && (
+              <Link to={previous.fields.slug} rel="prev">
+                <StyledButton>
+                  &laquo; previous
+                  {/* ← previous post: {previous.frontmatter.title}  */}
+                </StyledButton>
+              </Link>
+            )}
+          </div>
+          <div>
+            {next && (
+              <Link to={next.fields.slug} rel="next">
+                <StyledButton>
+                  next &raquo;{/* next post: {next.frontmatter.title} → */}
+                </StyledButton>
+              </Link>
+            )}
+          </div>
+        </Navigation>
+      </Container>
+    </Layout>
   )
 }
 

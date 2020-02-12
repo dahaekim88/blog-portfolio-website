@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from "react"
+import React from "react"
 import { graphql } from "gatsby"
 
 import {
-  Loader,
   Layout,
   SEO,
   Tag
@@ -22,63 +21,50 @@ export default ({ data }) => {
   const { title, description, tags, gif, demo, source } = post.frontmatter
   const editedTitle = `${title} - ${siteTitle}`
 
-  const [isLoading, setIsLoading] = useState(true)
-
-  useEffect(() => {
-    setIsLoading(false)
-  })
-
   return (
-    <>
-      {isLoading
-        ?
-        <Loader />
-        :
-        <Layout>
-          <SEO title={editedTitle} description={description} />
-          <Container>
-            <Img src={gif} alt={title} style={{ margin: "2rem 0" }} />
+    <Layout>
+      <SEO title={editedTitle} description={description} />
+      <Container>
+        <Img src={gif} alt={title} style={{ margin: "2rem 0" }} />
 
-            <div>
-              <PostTitle>{title}</PostTitle>
-              <Tag tags={tags} />
-            </div>
+        <div>
+          <PostTitle>{title}</PostTitle>
+          <Tag tags={tags} />
+        </div>
 
-            <div style={{ marginBottom: "2rem" }}>
-              {demo === "private" ? (
-                <StyledHref
-                  class="disable"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <DisabledStyledButton>Private Demo</DisabledStyledButton>
-                </StyledHref>
-              ) : (
-                  <StyledHref href={demo} target="_blank" rel="noopener noreferrer">
-                    <StyledButton>Demo</StyledButton>
-                  </StyledHref>
-                )}
-              {` `}
-              {source === "private" ? (
-                <StyledHref
-                  class="disable"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <DisabledStyledButton>Private Source</DisabledStyledButton>
-                </StyledHref>
-              ) : (
-                  <StyledHref href={source} target="_blank" rel="noopener noreferrer">
-                    <StyledButton>Source</StyledButton>
-                  </StyledHref>
-                )}
-            </div>
+        <div style={{ marginBottom: "2rem" }}>
+          {demo === "private" ? (
+            <StyledHref
+              class="disable"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <DisabledStyledButton>Private Demo</DisabledStyledButton>
+            </StyledHref>
+          ) : (
+              <StyledHref href={demo} target="_blank" rel="noopener noreferrer">
+                <StyledButton>Demo</StyledButton>
+              </StyledHref>
+            )}
+          {` `}
+          {source === "private" ? (
+            <StyledHref
+              class="disable"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <DisabledStyledButton>Private Source</DisabledStyledButton>
+            </StyledHref>
+          ) : (
+              <StyledHref href={source} target="_blank" rel="noopener noreferrer">
+                <StyledButton>Source</StyledButton>
+              </StyledHref>
+            )}
+        </div>
 
-            <div dangerouslySetInnerHTML={{ __html: post.html }} />
-          </Container>
-        </Layout>
-      }
-    </>
+        <div dangerouslySetInnerHTML={{ __html: post.html }} />
+      </Container>
+    </Layout>
   )
 }
 

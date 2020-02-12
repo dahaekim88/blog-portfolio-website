@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import React from "react"
 import PropTypes from "prop-types"
 
 import { Link, graphql } from "gatsby"
@@ -10,39 +10,26 @@ const Tags = ({ pageContext, data }) => {
   const { edges, totalCount } = data.allMarkdownRemark
   const tagHeader = `Post${
     totalCount === 1 ? "" : "s"
-  } about "${tag}" (${totalCount})`
-  
-  const [isLoading, setIsLoading] = useState(true)
-
-  useEffect(() => {
-    setIsLoading(false)
-  })
+    } about "${tag}" (${totalCount})`
 
   return (
-    <>
-      {isLoading
-        ?
-        <Loader />
-        :
-        <Layout>
-          <Container>
-            <h1>{tagHeader}</h1>
-            <ul>
-              {edges.map(({ node }) => {
-                const { slug } = node.fields
-                const { title } = node.frontmatter
-                return (
-                  <li key={slug}>
-                    <Link to={slug}>{title}</Link>
-                  </li>
-                )
-              })}
-            </ul>
-            <Link to="/tags">>> All tags</Link>
-          </Container>
-        </Layout>
-      }
-    </>
+    <Layout>
+      <Container>
+        <h1>{tagHeader}</h1>
+        <ul>
+          {edges.map(({ node }) => {
+            const { slug } = node.fields
+            const { title } = node.frontmatter
+            return (
+              <li key={slug}>
+                <Link to={slug}>{title}</Link>
+              </li>
+            )
+          })}
+        </ul>
+        <Link to="/tags">>> All tags</Link>
+      </Container>
+    </Layout>
   )
 }
 

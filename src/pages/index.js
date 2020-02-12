@@ -36,7 +36,9 @@ export default ({ data }) => {
   const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
-    setIsLoading(false)
+    setTimeout(() => {
+      setIsLoading(false)
+    }, 500)
   })
 
   return (

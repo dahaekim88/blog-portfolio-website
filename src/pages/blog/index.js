@@ -1,12 +1,11 @@
-import React, { useState, useEffect } from "react"
+import React from "react"
 import { graphql } from "gatsby"
 
 import {
-  Loader,
   Layout,
   Header,
   Post,
-} from "../components"
+} from "../../components"
 import {
   Container,
   PageHeading,
@@ -14,42 +13,29 @@ import {
 
 export default ({ data }) => {
   const posts = data.allMarkdownRemark.edges
-  
-  const [isLoading, setIsLoading] = useState(true)
-
-  useEffect(() => {
-    setIsLoading(false)
-  })
 
   return (
-    <>
-      {isLoading
-        ?
-        <Loader />
-        :
-        <Layout>
-          <PageHeading>
-            <Header title="Blog" subtitle="끄적끄적, 혼자만의 기술 노트" />
-          </PageHeading>
-          <Container>
-            {posts.map(({ node }) => (
-              <div>
-                <Post
-                  key={node.id}
-                  title={node.frontmatter.title}
-                  date={node.frontmatter.date}
-                  description={node.frontmatter.description}
-                  excerpt={node.excerpt}
-                  to={node.fields.slug}
-                  tags={node.frontmatter.tags}
-                />
-              </div>
-            ))}
-            {/* pagination */}
-          </Container>
-        </Layout>
-      }
-    </>
+    <Layout>
+      <PageHeading>
+        <Header title="Blog" subtitle="끄적끄적, 혼자만의 기술 노트" />
+      </PageHeading>
+      <Container>
+        {posts.map(({ node }) => (
+          <div>
+            <Post
+              key={node.id}
+              title={node.frontmatter.title}
+              date={node.frontmatter.date}
+              description={node.frontmatter.description}
+              excerpt={node.excerpt}
+              to={node.fields.slug}
+              tags={node.frontmatter.tags}
+            />
+          </div>
+        ))}
+        {/* pagination */}
+      </Container>
+    </Layout>
   )
 }
 
