@@ -53,6 +53,7 @@ Full-stack
 <br />
 
 A web application for online study group platform, rebuilt with GatsbyJS, worked as full-stack  
+- Enhanced code usability using React Hooks and Styled Components
 - Devised API server with Node.js & Typescript and designed database with MySQL 
 - Implemented user authentication using Passport.js and JWT  
 - Integrated payment service with Iamport and admin panel with Netlify CMS
