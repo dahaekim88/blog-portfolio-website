@@ -1,8 +1,8 @@
 ---
-title: "Yujin Robot B2B Website"
+title: Yujin Robot B2B Website
 date: 2019-11-02T21:30:00.000Z
 tags: ["website", "wordpress", "cms"]
-description: ""
+description: A corporate website of Yujin Robot, Korean leading company in the Robot industry
 image: /assets/yujinrobot.png
 gif: /assets/yujinrobot.gif
 demo: https://yujinrobot.com
