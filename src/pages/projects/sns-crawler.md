@@ -28,7 +28,6 @@ category: projects
 - Headless chrome API를 사용하여, 카카오 플러스친구 센터의 마케팅 결과 데이터 수집 자동화
 - 수집한 데이터를 기반으로 Excel spreadsheet 작성 & 파일 다운로드 제공
 - SNS 로그인 정보 수집 입력 양식 및 엑셀 파일 다운로드를 위한 Electron App 내 React 기반의 사용자 화면 구성
-- RxJS
 
 <br />
 
