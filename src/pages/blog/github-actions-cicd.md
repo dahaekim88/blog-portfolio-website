@@ -1,5 +1,5 @@
 ---
-title: "Github Actions로 CI/CD 구축하기 - 리액트 앱 S3 베포"
+title: "Github Actions로 CI/CD 구축하기 - 리액트 앱 S3 배포"
 date: 2020-02-10T20:46:00.000Z
 tags: ["github", "actions", "cicd", "deploy", "s3", "react"]
 category: blog
