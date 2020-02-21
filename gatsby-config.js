@@ -1,18 +1,19 @@
 module.exports = {
   siteMetadata: {
-    title: `DAHAE KIM`,
-    author: `dahae`,
-    description: `Dahae's Personal Website for Blog & Portfolio`,
-    siteUrl: `https://dahae.kim/`,
+    title: "DAHAE KIM | WEB DEVELOPER",
+    author: "dahae",
+    description: "Dahae's Personal Website for Blog & Portfolio",
+    siteUrl: "https://dahae.kim/",
     social: {
-      github: `dahaekim88`,
-      linkedin: `dahae-kim-ba590b31`,
-      email: `dhkim1014@gmail.com`,
+      github: "dahaekim88",
+      linkedin: "dahae-kim-ba590b31",
+      email: "dhkim1014@gmail.com",
     },
   },
   plugins: [
-    `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-styled-components`,
+    "gatsby-plugin-react-helmet",
+    "gatsby-plugin-sitemap",
+    "gatsby-plugin-styled-components",
     {
       // keep as first gatsby-source-filesystem plugin for gatsby image support
       resolve: "gatsby-source-filesystem",
@@ -49,7 +50,7 @@ module.exports = {
             },
           },
           {
-            resolve: `gatsby-remark-vscode`,
+            resolve: "gatsby-remark-vscode",
             options: {
               // Class prefix for <pre> tags containing syntax highlighting;
               // defaults to 'language-' (eg <pre class="language-js">).
@@ -74,18 +75,18 @@ module.exports = {
               // This toggles the display of line numbers globally alongside the code.
               // To use it, add the following line in src/layouts/index.js
               // right after importing the prism color scheme:
-              //  `require("prismjs/plugins/line-numbers/prism-line-numbers.css");`
+              //  "require("prismjs/plugins/line-numbers/prism-line-numbers.css");"
               // Defaults to false.
               // If you wish to only show line numbers on certain code blocks,
               // leave false and use the {numberLines: true} syntax below
               showLineNumbers: false,
               // If setting this to true, the parser won't handle and highlight inline
-              // code used in markdown i.e. single backtick code like `this`.
+              // code used in markdown i.e. single backtick code like "this".
               noInlineHighlight: false,
-              colorTheme: 'Night Owl',
+              colorTheme: "Night Owl",
               extensions: [{
-                identifier: 'sdras.night-owl',
-                version: '1.1.3'
+                identifier: "sdras.night-owl",
+                version: "1.1.3",
               }],
             },
           },
@@ -93,13 +94,13 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-typography`,
+      resolve: "gatsby-plugin-typography",
       options: {
-        pathToConfigModule: `src/utils/typography`,
+        pathToConfigModule: "src/utils/typography",
       },
     },
     {
-      resolve: `gatsby-plugin-manifest`,
+      resolve: "gatsby-plugin-manifest",
       options: {
         name: "Dahae's Blog",
         short_name: "Dahae",
@@ -112,7 +113,7 @@ module.exports = {
         icon: "src/images/icon.png", // This path is relative to the root of the site.
       },
     },
-    `gatsby-plugin-offline`,
-    `gatsby-plugin-netlify-cms`,
+    "gatsby-plugin-offline",
+    "gatsby-plugin-netlify-cms",
   ],
 }
