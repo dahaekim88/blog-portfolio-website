@@ -54,7 +54,7 @@ bar() // output: global
 
 자바스크립트는 함수의 실행코드 블럭 단위로 context를 콜 스택에 쌓고(push), 함수 실행 후 context를 벗어나면 콜 스택에서 제거(pop)된다. 이때 각각의 실행 코드블럭이 수행되는 시점에서 실행 환경(Execution Context)을 저장하게 되는데 이는 실행 유효범위인 Lexical Scope에 의해 결정된다.
 
-이 scope는 chain 구조로 연결되어 있어 현재 실행 시점 이전의 scope를 타고 올라가는 형태로 참조되기 때문에 현재 scope 에 선언되지 않는 객체참조가 가능하다.
+이 scope는 chain 구조로 연결되어 있어 현재 실행 시점 이전의 scope를 타고 올라가는 형태로 참조되기 때문에 현재 scope에 선언되지 않는 객체참조가 가능하다.
 
 <br />
 

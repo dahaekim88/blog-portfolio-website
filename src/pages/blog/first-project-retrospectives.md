@@ -62,7 +62,8 @@ Agile Scrum 방식을 초반부터 강조했으나, 기능 구현에만 급급�
 
   **※ 유용한 Git Command**  
   `git pull --rebase upstream dev`: merge 커밋없이 fetch만 해 옴  
-  `git push --force origin dev`: 이미
+  `git reset --hard HEAD`: 이전 커밋으로 돌아가기  
+  `git push --force origin dev`: 리셋한 커밋을 강제로 push하기  
 
 <br />
 
