@@ -72,6 +72,7 @@ export const StyledButton = styled.button`
   text-align: center;
   text-decoration: none;
   white-space: nowrap;
+  outline: none;
 
   &:active,
   &:hover {
