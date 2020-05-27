@@ -1,11 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 
-import {
-  Layout,
-  SEO,
-  Tag
-} from "../components"
+import { Layout, SEO, Tag } from "../components"
 import {
   Container,
   PostTitle,
@@ -35,31 +31,31 @@ export default ({ data }) => {
         <div style={{ marginBottom: "2rem" }}>
           {demo === "private" ? (
             <StyledHref
-              class="disable"
+              className="disable"
               target="_blank"
               rel="noopener noreferrer"
             >
               <DisabledStyledButton>Private Demo</DisabledStyledButton>
             </StyledHref>
           ) : (
-              <StyledHref href={demo} target="_blank" rel="noopener noreferrer">
-                <StyledButton>Demo</StyledButton>
-              </StyledHref>
-            )}
+            <StyledHref href={demo} target="_blank" rel="noopener noreferrer">
+              <StyledButton>Demo</StyledButton>
+            </StyledHref>
+          )}
           {` `}
           {source === "private" ? (
             <StyledHref
-              class="disable"
+              className="disable"
               target="_blank"
               rel="noopener noreferrer"
             >
               <DisabledStyledButton>Private Source</DisabledStyledButton>
             </StyledHref>
           ) : (
-              <StyledHref href={source} target="_blank" rel="noopener noreferrer">
-                <StyledButton>Source</StyledButton>
-              </StyledHref>
-            )}
+            <StyledHref href={source} target="_blank" rel="noopener noreferrer">
+              <StyledButton>Source</StyledButton>
+            </StyledHref>
+          )}
         </div>
 
         <div dangerouslySetInnerHTML={{ __html: post.html }} />

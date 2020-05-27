@@ -1,6 +1,6 @@
 ---
 title: Company Website
-date: 2020-03-26T23:33:00.000Z
+date: 2020-05-12T23:33:00.000Z
 tags: ["website", "vuejs", "wordpress", "multi-language"]
 description: Company website
 image: /assets/website.png
@@ -28,7 +28,7 @@ category: projects
 
 - Vue.js 이용하여 재사용 가능한 컴포넌트 및 신규 페이지 추가 제작
 - Wordpress CMS 연동 및 multi-language 지원
-- Facebook Graph API 사용하여 인스타그램 피드 fetch
+- Facebook Graph API 사용하여 인스타그램 피드 연동
 - Responsive Design 지원
 
 <br />
@@ -38,6 +38,7 @@ category: projects
 <br />
 
 A company website for publicity purpose
+
 - Implemented reusable components & new pages with Vue.js
 - Supported multilingual, integrated CMS
 - Fetched instagram feeds using Facebook Graph API
