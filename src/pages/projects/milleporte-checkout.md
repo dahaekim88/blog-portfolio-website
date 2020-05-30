@@ -10,10 +10,6 @@ source: private
 category: projects
 ---
 
-> 현재 해당 작업 내용은 Staging server에 반영된 상태이며, 백엔드 추가 작업으로 인해 production 반영은 추후 진행될 예정입니다. 참고로 현재 데모 링크는 해당 작업 내용이 반영되지 않은 Production site 입니다.
-
-<br />
-
 ### 프로젝트
 
 - 이름: Milleporte E-Commerce Site
