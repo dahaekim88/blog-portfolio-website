@@ -28,7 +28,7 @@
     "gatsby-remark-vscode": "^1.4.0",
     "gatsby-source-filesystem": "^2.0.23",
     "gatsby-transformer-remark": "^2.3.1",
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.19",
     "netlify-cms": "^2.8.0",
     "prismjs": "^1.15.0",
     "react": "^16.8.4",
